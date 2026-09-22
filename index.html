@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UniPlay Reseller - Premium Streaming Solution</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loading-screen">
+        <div class="loader">
+            <div class="loader-ring"></div>
+            <div class="loader-ring"></div>
+            <div class="loader-ring"></div>
+        </div>
+        <h2 class="loading-text">Loading Experience</h2>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-play"></i>
+                </div>
+                <span class="logo-text">UniPlay<span class="accent">Reseller</span></span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#features" class="nav-link">Features</a></li>
+                <li><a href="#pricing" class="nav-link">Pricing</a></li>
+                <li><a href="#api" class="nav-link">API</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-cta">
+                <a href="#pricing" class="btn btn-outline">Get Started</a>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-bg-animation">
+            <div class="gradient-orb orb-1"></div>
+            <div class="gradient-orb orb-2"></div>
+            <div class="gradient-orb orb-3"></div>
+        </div>
+        <div class="hero-particles" id="particles"></div>
+        
+        <div class="hero-content">
+            <div class="hero-badge fade-in-up">
+                <i class="fas fa-sparkles"></i>
+                <span>Powered by UniPlay API</span>
+            </div>
+            
+            <h1 class="hero-title fade-in-up delay-1">
+                Premium Streaming
+                <span class="gradient-text">Reseller Platform</span>
+            </h1>
+            
+            <p class="hero-description fade-in-up delay-2">
+                Bangun bisnis streaming Anda dengan infrastruktur UniPlay yang handal. 
+                API terintegrasi, manajemen otomatis, dan dukungan 24/7.
+            </p>
+            
+            <div class="hero-cta fade-in-up delay-3">
+                <a href="#pricing" class="btn btn-primary btn-glow">
+                    <i class="fas fa-rocket"></i>
+                    Mulai Sekarang
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+                <a href="#features" class="btn btn-secondary">
+                    <i class="fas fa-play-circle"></i>
+                    Lihat Demo
+                </a>
+            </div>
+            
+            <div class="hero-stats fade-in-up delay-4">
+                <div class="stat-item">
+                    <div class="stat-number" data-target="10000">0</div>
+                    <div class="stat-label">Active Users</div>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <div class="stat-number" data-target="99">0</div>
+                    <div class="stat-label">Uptime %</div>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <div class="stat-number" data-target="24">0</div>
+                    <div class="stat-label">Support Hours</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="hero-visual fade-in-right delay-2">
+            <div class="floating-card card-1">
+                <i class="fas fa-video"></i>
+                <span>4K Streaming</span>
+            </div>
+            <div class="floating-card card-2">
+                <i class="fas fa-shield-alt"></i>
+                <span>Secure API</span>
+            </div>
+            <div class="floating-card card-3">
+                <i class="fas fa-bolt"></i>
+                <span>Fast Setup</span>
+            </div>
+        </div>
+        
+        <div class="scroll-indicator">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+            <span>Scroll Down</span>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Why Choose Us</span>
+                <h2 class="section-title">Fitur <span class="gradient-text">Unggulan</span></h2>
+                <p class="section-description">
+                    everything yang Anda butuhkan untuk menjalankan bisnis reseller streaming
+                </p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card" data-aos="fade-up">
+                    <div class="feature-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>API Integration</h3>
+                    <p>Integrasi mudah dengan UniPlay API untuk manajemen akun otomatis dan real-time</p>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check"></i> RESTful API</li>
+                        <li><i class="fas fa-check"></i> Webhook Support</li>
+                        <li><i class="fas fa-check"></i> Auto Provisioning</li>
+                    </ul>
+                </div>
+                
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="feature-icon">
+                        <i class="fas fa-tachometer-alt"></i>
+                    </div>
+                    <h3>High Performance</h3>
+                    <p>Infrastruktur cloud yang cepat dengan uptime 99.9% dan latency rendah</p>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check"></i> 99.9% Uptime</li>
+                        <li><i class="fas fa-check"></i> CDN Global</li>
+                        <li><i class="fas fa-check"></i> 4K Quality</li>
+                    </ul>
+                </div>
+                
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Analytics Dashboard</h3>
+                    <p>Monitor penjualan, usage, dan revenue dengan dashboard real-time yang lengkap</p>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check"></i> Real-time Stats</li>
+                        <li><i class="fas fa-check"></i> Revenue Tracking</li>
+                        <li><i class="fas fa-check"></i> User Analytics</li>
+                    </ul>
+                </div>
+                
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="feature-icon">
+                        <i class="fas fa-paint-brush"></i>
+                    </div>
+                    <h3>White Label</h3>
+                    <p>Branding sepenuhnya milik Anda dengan custom domain dan tampilan personal</p>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check"></i> Custom Domain</li>
+                        <li><i class="fas fa-check"></i> Branding Sendiri</li>
+                        <li><i class="fas fa-check"></i> Custom Pricing</li>
+                    </ul>
+                </div>
+                
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="feature-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>24/7 Support</h3>
+                    <p>Tim support profesional siap membantu Anda kapan saja melalui multiple channel</p>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check"></i> Live Chat</li>
+                        <li><i class="fas fa-check"></i> Email Support</li>
+                        <li><i class="fas fa-check"></i> Documentation</li>
+                    </ul>
+                </div>
+                
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="500">
+                    <div class="feature-icon">
+                        <i class="fas fa-wallet"></i>
+                    </div>
+                    <h3>Payment Gateway</h3>
+                    <p>Terima pembayaran dari berbagai metode dengan sistem otomatis dan aman</p>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check"></i> Multiple Payment</li>
+                        <li><i class="fas fa-check"></i> Auto Renewal</li>
+                        <li><i class="fas fa-check"></i> Invoice System</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Pricing Plans</span>
+                <h2 class="section-title">Pilih <span class="gradient-text">Paket</span> Anda</h2>
+                <p class="section-description">
+                    Harga kompetitif dengan fitur lengkap untuk semua skala bisnis
+                </p>
+            </div>
+            
+            <div class="pricing-toggle">
+                <span class="toggle-label">Monthly</span>
+                <label class="switch">
+                    <input type="checkbox" id="pricing-switch">
+                    <span class="slider"></span>
+                </label>
+                <span class="toggle-label active">Yearly <span class="save-badge">Save 20%</span></span>
+            </div>
+            
+            <div class="pricing-grid">
+                <div class="pricing-card" data-aos="zoom-in">
+                    <div class="pricing-header">
+                        <h3>Starter</h3>
+                        <p>Untuk pemula yang baru memulai</p>
+                    </div>
+                    <div class="pricing-price">
+                        <span class="currency">Rp</span>
+                        <span class="amount monthly">299.000</span>
+                        <span class="amount yearly" style="display:none">2.870.000</span>
+                        <span class="period">/bulan</span>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> Hingga 100 Akun</li>
+                        <li><i class="fas fa-check"></i> API Access</li>
+                        <li><i class="fas fa-check"></i> Basic Analytics</li>
+                        <li><i class="fas fa-check"></i> Email Support</li>
+                        <li><i class="fas fa-check"></i> 99.5% Uptime</li>
+                        <li class="disabled"><i class="fas fa-times"></i> White Label</li>
+                        <li class="disabled"><i class="fas fa-times"></i> Custom Domain</li>
+                    </ul>
+                    <a href="#" class="btn btn-outline btn-block">Pilih Paket</a>
+                </div>
+                
+                <div class="pricing-card popular" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="popular-badge">
+                        <i class="fas fa-star"></i>
+                        Most Popular
+                    </div>
+                    <div class="pricing-header">
+                        <h3>Professional</h3>
+                        <p>Untuk bisnis yang sedang berkembang</p>
+                    </div>
+                    <div class="pricing-price">
+                        <span class="currency">Rp</span>
+                        <span class="amount monthly">799.000</span>
+                        <span class="amount yearly" style="display:none">7.670.000</span>
+                        <span class="period">/bulan</span>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> Hingga 500 Akun</li>
+                        <li><i class="fas fa-check"></i> Full API Access</li>
+                        <li><i class="fas fa-check"></i> Advanced Analytics</li>
+                        <li><i class="fas fa-check"></i> Priority Support</li>
+                        <li><i class="fas fa-check"></i> 99.9% Uptime</li>
+                        <li><i class="fas fa-check"></i> White Label</li>
+                        <li class="disabled"><i class="fas fa-times"></i> Custom Domain</li>
+                    </ul>
+                    <a href="#" class="btn btn-primary btn-block btn-glow">Pilih Paket</a>
+                </div>
+                
+                <div class="pricing-card" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="pricing-header">
+                        <h3>Enterprise</h3>
+                        <p>Untuk bisnis skala besar</p>
+                    </div>
+                    <div class="pricing-price">
+                        <span class="currency">Rp</span>
+                        <span class="amount monthly">1.999.000</span>
+                        <span class="amount yearly" style="display:none">19.190.000</span>
+                        <span class="period">/bulan</span>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> Unlimited Akun</li>
+                        <li><i class="fas fa-check"></i> Full API + Webhook</li>
+                        <li><i class="fas fa-check"></i> Custom Analytics</li>
+                        <li><i class="fas fa-check"></i> 24/7 Dedicated Support</li>
+                        <li><i class="fas fa-check"></i> 99.99% Uptime</li>
+                        <li><i class="fas fa-check"></i> White Label</li>
+                        <li><i class="fas fa-check"></i> Custom Domain</li>
+                    </ul>
+                    <a href="#" class="btn btn-outline btn-block">Pilih Paket</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- API Section -->
+    <section id="api" class="api-section">
+        <div class="container">
+            <div class="api-content">
+                <div class="api-text" data-aos="fade-right">
+                    <span class="section-badge">Developer Friendly</span>
+                    <h2 class="section-title">Powerful <span class="gradient-text">API</span></h2>
+                    <p class="section-description">
+                        Integrasikan sistem Anda dengan UniPlay API yang dokumentasi lengkap dan mudah digunakan
+                    </p>
+                    
+                    <div class="api-features">
+                        <div class="api-feature">
+                            <i class="fas fa-bolt"></i>
+                            <div>
+                                <h4>Fast Integration</h4>
+                                <p>Setup dalam hitungan menit dengan SDK yang tersedia</p>
+                            </div>
+                        </div>
+                        <div class="api-feature">
+                            <i class="fas fa-book"></i>
+                            <div>
+                                <h4>Complete Docs</h4>
+                                <p>Dokumentasi lengkap dengan contoh code untuk berbagai bahasa</p>
+                            </div>
+                        </div>
+                        <div class="api-feature">
+                            <i class="fas fa-shield-alt"></i>
+                            <div>
+                                <h4>Secure</h4>
+                                <p>API key encryption dan rate limiting untuk keamanan</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <a href="#" class="btn btn-primary">
+                        <i class="fas fa-code"></i>
+                        Lihat Dokumentasi API
+                    </a>
+                </div>
+                
+                <div class="api-code" data-aos="fade-left">
+                    <div class="code-window">
+                        <div class="code-header">
+                            <div class="code-dots">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                            <span>api-example.js</span>
+                        </div>
+                        <div class="code-body">
+<pre><code><span class="keyword">const</span> <span class="variable">UniPlayAPI</span> = <span class="keyword">require</span>(<span class="string">'uniplay-api'</span>);
+
+<span class="keyword">const</span> <span class="variable">api</span> = <span class="keyword">new</span> <span class="class">UniPlayAPI</span>({
+  <span class="property">apiKey</span>: <span class="string">'your_api_key_here'</span>,
+  <span class="property">resellerId</span>: <span class="string">'your_reseller_id'</span>
+});
+
+<span class="comment">// Create new account</span>
+<span class="keyword">async function</span> <span class="function">createAccount</span>() {
+  <span class="keyword">const</span> <span class="variable">account</span> = <span class="keyword">await</span> <span class="variable">api</span>.<span class="method">accounts</span>.<span class="method">create</span>({
+    <span class="property">username</span>: <span class="string">'customer123'</span>,
+    <span class="property">password</span>: <span class="string">'securePass456'</span>,
+    <span class="property">plan</span>: <span class="string">'premium'</span>,
+    <span class="property">duration</span>: <span class="number">30</span> <span class="comment">// days</span>
+  });
+  
+  <span class="variable">console</span>.<span class="method">log</span>(<span class="string">'Account created:'</span>, <span class="variable">account</span>);
+  <span class="keyword">return</span> <span class="variable">account</span>;
+}
+
+<span class="comment">// Get account status</span>
+<span class="keyword">const</span> <span class="variable">status</span> = <span class="keyword">await</span> <span class="variable">api</span>.<span class="method">accounts</span>.<span class="method">get</span>(<span class="string">'account_id'</span>);
+<span class="variable">console</span>.<span class="method">log</span>(<span class="string">'Status:'</span>, <span class="variable">status</span>.<span class="property">active</span>);</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Get In Touch</span>
+                <h2 class="section-title">Hubungi <span class="gradient-text">Kami</span></h2>
+                <p class="section-description">
+                    Siap untuk memulai? Konsultasikan kebutuhan bisnis Anda dengan tim kami
+                </p>
+            </div>
+            
+            <div class="contact-grid">
+                <div class="contact-info" data-aos="fade-right">
+                    <div class="contact-card">
+                        <i class="fas fa-envelope"></i>
+                        <h4>Email</h4>
+                        <p>support@yourdomain.com</p>
+                    </div>
+                    <div class="contact-card">
+                        <i class="fab fa-whatsapp"></i>
+                        <h4>WhatsApp</h4>
+                        <p>+62 812-3456-7890</p>
+                    </div>
+                    <div class="contact-card">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <h4>Location</h4>
+                        <p>Jakarta, Indonesia</p>
+                    </div>
+                    
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <div class="contact-form-wrapper" data-aos="fade-left">
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-group">
+                            <input type="text" id="name" required>
+                            <label for="name">Nama Lengkap</label>
+                            <span class="focus-border"></span>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" required>
+                            <label for="email">Email Address</label>
+                            <span class="focus-border"></span>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="subject" required>
+                            <label for="subject">Subjek</label>
+                            <span class="focus-border"></span>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" rows="5" required></textarea>
+                            <label for="message">Pesan</label>
+                            <span class="focus-border"></span>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block btn-glow">
+                            <i class="fas fa-paper-plane"></i>
+                            Kirim Pesan
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <div class="logo-icon">
+                            <i class="fas fa-play"></i>
+                        </div>
+                        <span class="logo-text">UniPlay<span class="accent">Reseller</span></span>
+                    </div>
+                    <p>Platform reseller streaming premium dengan infrastruktur UniPlay yang handal dan terpercayai.</p>
+                    <div class="footer-social">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#pricing">Pricing</a></li>
+                        <li><a href="#api">API Docs</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#">Streaming Solution</a></li>
+                        <li><a href="#">API Integration</a></li>
+                        <li><a href="#">White Label</a></li>
+                        <li><a href="#">Custom Development</a></li>
+                        <li><a href="#">Enterprise Plan</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-newsletter">
+                    <h4>Newsletter</h4>
+                    <p>Dapatkan update terbaru dan promo eksklusif</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your email">
+                        <button type="submit"><i class="fas fa-arrow-right"></i></button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 UniPlay Reseller. All rights reserved. | Powered by UniPlay API</p>
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
