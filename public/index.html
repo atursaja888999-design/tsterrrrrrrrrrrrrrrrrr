@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+  <meta
+    name="description"
+    content="Platform top up game cepat, aman, dan otomatis."
+  />
+  <title>NovaTopup — Top Up Game Instan</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+  />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="noise"></div>
+  <div class="orb orb-one"></div>
+  <div class="orb orb-two"></div>
+  <div class="orb orb-three"></div>
+
+  <header class="navbar">
+    <a href="#" class="brand">
+      <span class="brand-icon"><i class="fa-solid fa-bolt"></i></span>
+      <span>NOVA<span>TOPUP</span></span>
+    </a>
+
+    <nav class="nav-menu">
+      <a href="#games">Game</a>
+      <a href="#cara-order">Cara Order</a>
+      <a href="#keunggulan">Keunggulan</a>
+    </nav>
+
+    <button class="nav-cta" id="openTrackButton">
+      <i class="fa-solid fa-magnifying-glass"></i>
+      Lacak Pesanan
+    </button>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy reveal">
+        <div class="eyebrow">
+          <span class="pulse-dot"></span>
+          Layanan top up otomatis 24/7
+        </div>
+
+        <h1>
+          Naikkan Level,
+          <span>Tanpa Menunggu.</span>
+        </h1>
+
+        <p>
+          Top up game favoritmu lebih cepat, aman, dan praktis.
+          Pilih produk, masukkan ID, lalu nikmati transaksi instan.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#games" class="button button-primary">
+            Top Up Sekarang
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+
+          <button class="button button-ghost" id="heroTrackButton">
+            <i class="fa-solid fa-clock-rotate-left"></i>
+            Cek Transaksi
+          </button>
+        </div>
+
+        <div class="hero-stats">
+          <div>
+            <strong>24/7</strong>
+            <span>Siap melayani</span>
+          </div>
+          <div>
+            <strong>Instan</strong>
+            <span>Proses otomatis</span>
+          </div>
+          <div>
+            <strong>100%</strong>
+            <span>Transaksi aman</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual reveal">
+        <div class="hero-grid"></div>
+        <div class="floating-chip chip-one">
+          <i class="fa-solid fa-gem"></i>
+          <span>Diamond Masuk</span>
+        </div>
+        <div class="floating-chip chip-two">
+          <i class="fa-solid fa-shield-halved"></i>
+          <span>Secure Checkout</span>
+        </div>
+
+        <div class="game-orb">
+          <div class="orb-ring ring-one"></div>
+          <div class="orb-ring ring-two"></div>
+          <div class="orb-core">
+            <i class="fa-solid fa-gamepad"></i>
+          </div>
+        </div>
+
+        <div class="energy-line line-one"></div>
+        <div class="energy-line line-two"></div>
+      </div>
+    </section>
+
+    <section class="games-section" id="games">
+      <div class="section-heading reveal">
+        <div>
+          <span class="section-label">PILIH GAME FAVORIT</span>
+          <h2>Mulai top up dalam hitungan detik.</h2>
+        </div>
+
+        <div class="search-box">
+          <i class="fa-solid fa-search"></i>
+          <input
+            type="search"
+            id="gameSearch"
+            placeholder="Cari game..."
+            autocomplete="off"
+          />
+        </div>
+      </div>
+
+      <div class="game-grid" id="gameGrid">
+        <button
+          class="game-card featured reveal"
+          data-game="Mobile Legends"
+          data-category="MOBA"
+          data-image="ML"
+          data-requires-zone="true"
+        >
+          <div class="game-cover cover-ml">
+            <span>ML</span>
+            <div class="cover-glow"></div>
+          </div>
+          <div class="game-info">
+            <span class="game-category">MOBA</span>
+            <h3>Mobile Legends</h3>
+            <p>Diamond mulai Rp1.500</p>
+          </div>
+          <span class="arrow-circle"><i class="fa-solid fa-arrow-right"></i></span>
+        </button>
+
+        <button
+          class="game-card reveal"
+          data-game="Free Fire"
+          data-category="Battle Royale"
+          data-image="FF"
+          data-requires-zone="false"
+        >
+          <div class="game-cover cover-ff">
+            <span>FF</span>
+            <div class="cover-glow"></div>
+          </div>
+          <div class="game-info">
+            <span class="game-category">BATTLE ROYALE</span>
+            <h3>Free Fire</h3>
+            <p>Diamond mulai Rp1.000</p>
+          </div>
+          <span class="arrow-circle"><i class="fa-solid fa-arrow-right"></i></span>
+        </button>
+
+        <button
+          class="game-card reveal"
+          data-game="PUBG Mobile"
+          data-category="Battle Royale"
+          data-image="PUBG"
+          data-requires-zone="false"
+        >
+          <div class="game-cover cover-pubg">
+            <span>PUBG</span>
+            <div class="cover-glow"></div>
+          </div>
+          <div class="game-info">
+            <span class="game-category">BATTLE ROYALE</span>
+            <h3>PUBG Mobile</h3>
+            <p>UC mulai Rp2.000</p>
+          </div>
+          <span class="arrow-circle"><i class="fa-solid fa-arrow-right"></i></span>
+        </button>
+
+        <button
+          class="game-card reveal"
+          data-game="Valorant"
+          data-category="FPS"
+          data-image="VAL"
+          data-requires-zone="false"
+        >
+          <div class="game-cover cover-val">
+            <span>VAL</span>
+            <div class="cover-glow"></div>
+          </div>
+          <div class="game-info">
+            <span class="game-category">FPS</span>
+            <h3>Valorant</h3>
+            <p>Points mulai Rp15.000</p>
+          </div>
+          <span class="arrow-circle"><i class="fa-solid fa-arrow-right"></i></span>
+        </button>
+
+        <button
+          class="game-card reveal"
+          data-game="Genshin Impact"
+          data-category="RPG"
+          data-image="GI"
+          data-requires-zone="true"
+        >
+          <div class="game-cover cover-gi">
+            <span>GI</span>
+            <div class="cover-glow"></div>
+          </div>
+          <div class="game-info">
+            <span class="game-category">RPG</span>
+            <h3>Genshin Impact</h3>
+            <p>Genesis Crystal tersedia</p>
+          </div>
+          <span class="arrow-circle"><i class="fa-solid fa-arrow-right"></i></span>
+        </button>
+
+        <button
+          class="game-card reveal"
+          data-game="Honor of Kings"
+          data-category="MOBA"
+          data-image="HOK"
+          data-requires-zone="false"
+        >
+          <div class="game-cover cover-hok">
+            <span>HOK</span>
+            <div class="cover-glow"></div>
+          </div>
+          <div class="game-info">
+            <span class="game-category">MOBA</span>
+            <h3>Honor of Kings</h3>
+            <p>Token mulai Rp3.000</p>
+          </div>
+          <span class="arrow-circle"><i class="fa-solid fa-arrow-right"></i></span>
+        </button>
+      </div>
+
+      <p id="emptySearch" class="empty-search" hidden>
+        Game tidak ditemukan. Coba kata kunci lain.
+      </p>
+    </section>
+
+    <section class="features-section" id="keunggulan">
+      <article class="feature-card reveal">
+        <div class="feature-icon violet">
+          <i class="fa-solid fa-bolt"></i>
+        </div>
+        <h3>Serba Instan</h3>
+        <p>Pesanan dikirim otomatis segera setelah transaksi berhasil.</p>
+      </article>
+
+      <article class="feature-card reveal">
+        <div class="feature-icon pink">
+          <i class="fa-solid fa-lock"></i>
+        </div>
+        <h3>Data Terjaga</h3>
+        <p>API key dan proses transaksi diamankan melalui backend server.</p>
+      </article>
+
+      <article class="feature-card reveal">
+        <div class="feature-icon cyan">
+          <i class="fa-solid fa-headset"></i>
+        </div>
+        <h3>Siap Membantu</h3>
+        <p>Informasi pesanan dapat dilacak menggunakan nomor referensi.</p>
+      </article>
+    </section>
+
+    <section class="steps-section" id="cara-order">
+      <div class="section-heading reveal">
+        <div>
+          <span class="section-label">CARA ORDER</span>
+          <h2>Praktis dalam tiga langkah.</h2>
+        </div>
+      </div>
+
+      <div class="steps-grid">
+        <div class="step reveal">
+          <span class="step-number">01</span>
+          <i class="fa-solid fa-gamepad"></i>
+          <h3>Pilih Game</h3>
+          <p>Pilih game dan nominal top-up yang Anda perlukan.</p>
+        </div>
+
+        <div class="step reveal">
+          <span class="step-number">02</span>
+          <i class="fa-solid fa-id-card"></i>
+          <h3>Masukkan ID</h3>
+          <p>Isi User ID dan Server/Zone dengan tepat.</p>
+        </div>
+
+        <div class="step reveal">
+          <span class="step-number">03</span>
+          <i class="fa-solid fa-rocket"></i>
+          <h3>Pesanan Diproses</h3>
+          <p>Sistem mengirim pesanan melalui integrasi API otomatis.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <a href="#" class="brand">
+      <span class="brand-icon"><i class="fa-solid fa-bolt"></i></span>
+      <span>NOVA<span>TOPUP</span></span>
+    </a>
+    <p>© <span id="year"></span> NovaTopup. Top up cepat untuk para pemain.</p>
+  </footer>
+
+  <div class="modal-backdrop" id="topupModal" aria-hidden="true">
+    <section class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="modal-close" id="closeModalButton" aria-label="Tutup modal">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <div class="modal-header">
+        <div class="mini-game-cover" id="selectedGameLogo">ML</div>
+        <div>
+          <span class="section-label">TOP UP GAME</span>
+          <h2 id="modalTitle">Mobile Legends</h2>
+        </div>
+      </div>
+
+      <form id="topupForm">
+        <input type="hidden" id="selectedGame" />
+        <input type="hidden" id="selectedProductCode" />
+
+        <div class="form-step">
+          <span class="form-step-number">1</span>
+          <div>
+            <h3>Masukkan data akun</h3>
+            <p>Pastikan User ID dan Zone ID sudah benar.</p>
+          </div>
+        </div>
+
+        <div class="input-grid">
+          <label>
+            User ID
+            <input
+              id="userId"
+              type="text"
+              inputmode="numeric"
+              placeholder="Contoh: 123456789"
+              required
+            />
+          </label>
+
+          <label id="zoneGroup">
+            Zone / Server ID
+            <input
+              id="zoneId"
+              type="text"
+              inputmode="numeric"
+              placeholder="Contoh: 1234"
+            />
+          </label>
+        </div>
+
+        <button type="button" class="check-id-button" id="checkIdButton">
+          <i class="fa-solid fa-circle-check"></i>
+          Cek ID Akun
+        </button>
+
+        <div class="account-result" id="accountResult" hidden></div>
+
+        <div class="form-step second-step">
+          <span class="form-step-number">2</span>
+          <div>
+            <h3>Pilih nominal</h3>
+            <p>Produk akan diambil dari API UniPlay jika tersedia.</p>
+          </div>
+        </div>
+
+        <div class="nominal-grid" id="nominalGrid">
+          <button type="button" class="nominal-card active" data-code="ML86" data-price="20000">
+            <strong>86 Diamond</strong>
+            <span>Rp20.000</span>
+          </button>
+          <button type="button" class="nominal-card" data-code="ML172" data-price="40000">
+            <strong>172 Diamond</strong>
+            <span>Rp40.000</span>
+          </button>
+          <button type="button" class="nominal-card" data-code="ML257" data-price="60000">
+            <strong>257 Diamond</strong>
+            <span>Rp60.000</span>
+          </button>
+          <button type="button" class="nominal-card" data-code="ML514" data-price="120000">
+            <strong>514 Diamond</strong>
+            <span>Rp120.000</span>
+          </button>
+        </div>
+
+        <div class="form-step second-step">
+          <span class="form-step-number">3</span>
+          <div>
+            <h3>Kontak pembeli</h3>
+            <p>Opsional, untuk notifikasi dan bukti transaksi.</p>
+          </div>
+        </div>
+
+        <div class="input-grid">
+          <label>
+            Email
+            <input id="email" type="email" placeholder="nama@email.com" />
+          </label>
+
+          <label>
+            Nomor WhatsApp
+            <input id="phone" type="tel" placeholder="08xxxxxxxxxx" />
+          </label>
+        </div>
+
+        <div class="order-summary">
+          <div>
+            <span>Game</span>
+            <strong id="summaryGame">Mobile Legends</strong>
+          </div>
+          <div>
+            <span>Produk</span>
+            <strong id="summaryProduct">86 Diamond</strong>
+          </div>
+          <div>
+            <span>Total</span>
+            <strong id="summaryPrice">Rp20.000</strong>
+          </div>
+        </div>
+
+        <button type="submit" class="button button-primary order-button" id="orderButton">
+          <span>Proses Pesanan</span>
+          <i class="fa-solid fa-arrow-right"></i>
+        </button>
+
+        <p class="form-note">
+          <i class="fa-solid fa-shield-halved"></i>
+          Data API dan credential transaksi tidak ditampilkan ke browser.
+        </p>
+      </form>
+    </section>
+  </div>
+
+  <div class="modal-backdrop" id="trackModal" aria-hidden="true">
+    <section class="modal track-modal" role="dialog" aria-modal="true">
+      <button class="modal-close" id="closeTrackButton" aria-label="Tutup modal">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <div class="modal-header">
+        <div class="mini-game-cover tracking-icon">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
+        <div>
+          <span class="section-label">LACAK PESANAN</span>
+          <h2>Status transaksi Anda</h2>
+        </div>
+      </div>
+
+      <form id="trackForm">
+        <label>
+          Nomor Referensi
+          <input
+            id="trackingRef"
+            type="text"
+            placeholder="Contoh: WEB-..."
+            required
+          />
+        </label>
+
+        <button type="submit" class="button button-primary order-button">
+          <span>Cek Status</span>
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+      </form>
+
+      <div class="tracking-result" id="trackingResult" hidden></div>
+    </section>
+  </div>
+
+  <div class="toast-container" id="toastContainer"></div>
+  <div class="loader-overlay" id="loaderOverlay" hidden>
+    <div class="loader-content">
+      <div class="loader-spinner"></div>
+      <p id="loaderText">Memproses transaksi...</p>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
