@@ -1091,10 +1091,14 @@ input:focus {
   position: fixed;
   z-index: 200;
   inset: 0;
-  display: grid;
+  display: none;
   place-items: center;
   background: rgba(4, 3, 10, 0.76);
   backdrop-filter: blur(7px);
+}
+
+.loader-overlay:not([hidden]) {
+  display: grid;
 }
 
 .loader-content {
