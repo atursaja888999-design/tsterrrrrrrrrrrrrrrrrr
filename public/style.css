@@ -72,29 +72,45 @@ a { color: inherit; text-decoration: none; }
   justify-content: space-between;
   height: 88px;
 }
+
+/* Logo video Daulay Storee: container gelap menyatu dari kiri ke kanan. */
 .brand {
+  position: relative;
   display: inline-flex;
   align-items: center;
-  gap: 10px;
-  font-family: "Space Grotesk", sans-serif;
-  font-size: 18px;
-  font-weight: 700;
-  letter-spacing: -0.8px;
-}
-.brand > span:last-child span { color: var(--primary-bright); }
-.brand-icon {
-  display: grid;
-  width: 34px;
-  height: 34px;
-  place-items: center;
-  color: white;
-  border: 1px solid rgba(150, 220, 255, 0.4);
+  flex: 0 0 auto;
+  width: min(300px, 58vw);
+  max-width: 300px;
+  min-height: 58px;
+  overflow: hidden;
+  border: 1px solid rgba(80, 170, 255, 0.10);
   border-radius: 11px;
-  background: linear-gradient(135deg, #0b4eab, #1689e9);
-  box-shadow: 0 8px 24px rgba(28, 142, 246, 0.38);
-  transform: skew(-8deg);
+  background:
+    radial-gradient(circle at 14% 50%, rgba(13, 105, 203, .22), transparent 44%),
+    linear-gradient(90deg, #01050b 0%, #02070f 45%, #04101f 100%);
+  box-shadow: inset 0 1px 0 rgba(170, 227, 255, .04), 0 8px 26px rgba(0, 0, 0, .22);
 }
-.brand-icon i { transform: skew(8deg); }
+.brand::before {
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  content: "";
+  pointer-events: none;
+  background: linear-gradient(90deg, rgba(4, 14, 27, .45), transparent 34%, transparent 72%, rgba(3, 14, 29, .38));
+}
+.brand-logo-animation {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  height: 58px;
+  object-fit: cover;
+  object-position: center;
+  background: #02070f;
+  mix-blend-mode: screen;
+}
+.navbar .brand { margin-right: 10px; }
+
 .nav-menu { display: flex; gap: 28px; margin-left: 120px; }
 .nav-menu a { color: var(--muted); font-size: 14px; font-weight: 500; transition: color .25s ease; }
 .nav-menu a:hover { color: var(--text); }
@@ -176,7 +192,6 @@ a { color: inherit; text-decoration: none; }
 .line-one { top: 37%; left: -20px; transform: rotate(-22deg); }
 .line-two { right: -32px; bottom: 33%; transform: rotate(151deg); animation-delay: -2s; }
 
-/* Api biru dekoratif: hanya elemen visual, tidak mengganggu tombol/form. */
 .flame-field { position: absolute; z-index: 2; right: -8px; bottom: -18px; left: -8px; height: 155px; overflow: hidden; pointer-events: none; opacity: .84; }
 .flame { position: absolute; bottom: -40px; width: 72px; height: 150px; border-radius: 52% 48% 38% 62% / 62% 40% 60% 38%; background: radial-gradient(ellipse at 50% 86%, rgba(221, 248, 255, .94) 0 6%, rgba(74, 193, 255, .8) 16%, rgba(14, 111, 214, .54) 42%, rgba(4, 37, 93, 0) 72%); filter: blur(1px) drop-shadow(0 -10px 13px rgba(29, 167, 255, .4)); transform-origin: 50% 100%; animation: flame-dance 4.1s ease-in-out infinite; }
 .flame::before { position: absolute; bottom: 25px; left: 13px; width: 45px; height: 90px; content: ""; border-radius: 65% 35% 55% 45% / 70% 45% 55% 30%; background: radial-gradient(ellipse at 50% 85%, rgba(226, 249, 255, .95), rgba(73, 204, 255, .56) 26%, rgba(0, 90, 206, 0) 70%); transform: rotate(-12deg); }
@@ -231,6 +246,8 @@ a { color: inherit; text-decoration: none; }
 .step h3 { margin: 20px 0 7px; font-size: 18px; }
 .step p { max-width: 240px; margin: 0; color: var(--muted); font-size: 14px; line-height: 1.55; }
 footer { display: flex; align-items: center; justify-content: space-between; min-height: 90px; border-top: 1px solid var(--line); }
+footer .brand { width: min(250px, 60vw); min-height: 48px; }
+footer .brand-logo-animation { height: 48px; }
 footer p { color: #71879a; font-size: 12px; }
 
 .modal-backdrop { position: fixed; z-index: 50; inset: 0; display: grid; overflow-y: auto; place-items: center; padding: 20px; opacity: 0; visibility: hidden; background: rgba(1,5,10,.82); backdrop-filter: blur(9px); transition: opacity .25s ease, visibility .25s ease; }
@@ -292,12 +309,15 @@ input:focus { border-color: rgba(88, 187, 255, .75); box-shadow: 0 0 0 3px rgba(
   .hero-visual { min-height: 340px; }
   .game-grid { grid-template-columns: repeat(2,1fr); }
 }
+
 @media (max-width: 600px) {
   .navbar, .hero, .games-section, .features-section, .steps-section, footer { width: min(100% - 28px, 1160px); }
   .navbar { height: 71px; }
+  .brand { width: min(205px, 53vw); min-height: 42px; border-radius: 8px; }
+  .brand-logo-animation { height: 42px; }
+  footer .brand { width: min(190px, 58vw); min-height: 39px; }
+  footer .brand-logo-animation { height: 39px; }
   .nav-cta { padding: 9px 10px; font-size: 11px; }
-  .brand { font-size: 15px; }
-  .brand-icon { width: 29px; height: 29px; border-radius: 9px; }
   .hero { min-height: auto; padding: 39px 0 38px; }
   .hero h1 { font-size: 42px; letter-spacing: -2.3px; }
   .hero-copy > p { font-size: 15px; }
