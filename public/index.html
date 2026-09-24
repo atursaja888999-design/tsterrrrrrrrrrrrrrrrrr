@@ -3,23 +3,71 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Platform top up game cepat, aman, dan terhubung ke katalog UniPlay." />
-  <meta name="theme-color" content="#090713" />
+  <meta name="description" content="Daulay Storee menyediakan top up game murah, cepat, dan aman. Beli diamond Mobile Legends, Free Fire, PUBG Mobile, Valorant, Genshin Impact, dan game favorit lainnya dengan proses praktis." />
+  <meta name="keywords" content="Daulay Storee, daulaystoree, top up murah, top up cepat, top up game murah, diamond murah, beli diamond murah, top up Mobile Legends murah, diamond Mobile Legends murah, top up Free Fire murah, diamond Free Fire murah, top up PUBG Mobile, UC PUBG murah, top up Valorant, Valorant Points murah, top up Genshin Impact, top up game Indonesia" />
+  <meta name="author" content="Daulay Storee" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <meta name="theme-color" content="#03070e" />
   <meta name="google-site-verification" content="k4ZG5AmmZJOCP3cudhR5QWc1s9cAlXwAjIRSp7LXv74" />
-  <title>NovaTopup — Top Up Game Instan</title>
 
+  <link rel="canonical" href="https://daulaystore.my.id/" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" href="./iniaja.mp4" as="video" type="video/mp4" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="id_ID" />
+  <meta property="og:site_name" content="Daulay Storee" />
+  <meta property="og:title" content="Daulay Storee — Top Up Game Murah, Cepat & Aman" />
+  <meta property="og:description" content="Top up game murah dan cepat untuk Mobile Legends, Free Fire, PUBG Mobile, Valorant, Genshin Impact, dan game favorit lainnya." />
+  <meta property="og:url" content="https://daulaystore.my.id/" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Daulay Storee — Top Up Game Murah, Cepat & Aman" />
+  <meta name="twitter:description" content="Top up game murah dan cepat untuk game favorit Anda." />
+
+  <title>Daulay Storee — Top Up Game Murah, Cepat & Aman</title>
+
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
-  <link rel="stylesheet" href="/style.css?v=20260925" />
+  <link rel="stylesheet" href="./style.css?v=daulaystoree-20260925" />
 
   <style>
-    .api-game-cover { overflow: hidden; background: linear-gradient(135deg, #4d1c8f, #171027); }
+    .api-game-cover { overflow: hidden; background: linear-gradient(135deg, #0b4eab, #07101f); }
     .api-game-cover img { width: 100%; height: 100%; display: block; object-fit: cover; }
     .api-game-cover > span { display: grid; width: 100%; height: 100%; place-items: center; font-weight: 800; font-size: 1.15rem; letter-spacing: .08em; }
-    .game-loading { grid-column: 1 / -1; margin: 0; padding: 1.25rem; color: #c9c3e8; text-align: center; }
+    .game-loading { grid-column: 1 / -1; margin: 0; padding: 1.25rem; color: #c9eaff; text-align: center; }
+
+    .brand { display: inline-flex; align-items: center; width: min(285px, 58vw); max-width: 285px; }
+    .brand-logo-animation { display: block; width: 100%; height: auto; max-height: 58px; object-fit: contain; object-position: left center; }
+
+    @media (max-width: 600px) {
+      .brand { width: min(190px, 53vw); }
+      .brand-logo-animation { max-height: 43px; }
+    }
   </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Daulay Storee",
+    "url": "https://daulaystore.my.id/",
+    "description": "Platform top up game murah, cepat, dan aman untuk pemain Indonesia.",
+    "inLanguage": "id-ID"
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Daulay Storee",
+    "url": "https://daulaystore.my.id/",
+    "description": "Layanan top up game murah dan cepat.",
+    "logo": "https://daulaystore.my.id/iniaja.mp4"
+  }
+  </script>
 </head>
 
 <body>
@@ -29,15 +77,19 @@
   <div class="orb orb-three" aria-hidden="true"></div>
 
   <header class="navbar">
-    <a href="#" class="brand" aria-label="NovaTopup beranda">
-      <span class="brand-icon" aria-hidden="true"><i class="fa-solid fa-bolt"></i></span>
-      <span>NOVA<span>TOPUP</span></span>
+    <a href="#" class="brand" aria-label="Daulay Storee beranda">
+      <video class="brand-logo-animation" autoplay muted loop playsinline preload="metadata" aria-label="Logo animasi Daulay Storee">
+        <source src="./iniaja.mp4" type="video/mp4" />
+        Daulay Storee
+      </video>
     </a>
+
     <nav class="nav-menu" aria-label="Navigasi utama">
       <a href="#games">Game</a>
       <a href="#cara-order">Cara Order</a>
       <a href="#keunggulan">Keunggulan</a>
     </nav>
+
     <button class="nav-cta" id="openTrackButton" type="button">
       <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i><span>Lacak Pesanan</span>
     </button>
@@ -46,56 +98,66 @@
   <main>
     <section class="hero" aria-labelledby="heroTitle">
       <div class="hero-copy reveal">
-        <div class="eyebrow"><span class="pulse-dot" aria-hidden="true"></span>Layanan katalog top up 24/7</div>
-        <h1 id="heroTitle">Naikkan Level,<span>Tanpa Menunggu.</span></h1>
-        <p>Top up game favoritmu lebih cepat dan praktis. Pilih produk, masukkan ID akun, lalu cek akun tujuan secara aman.</p>
+        <div class="eyebrow"><span class="pulse-dot" aria-hidden="true"></span>Top up game murah & cepat 24/7</div>
+        <h1 id="heroTitle">Top Up Game Murah,<span>Proses Cepat & Aman.</span></h1>
+        <p>Daulay Storee menyediakan top up game murah untuk game favoritmu. Pilih produk, masukkan ID akun, lalu cek akun tujuan secara praktis dan aman.</p>
         <div class="hero-actions">
           <a href="#games" class="button button-primary"><span>Top Up Sekarang</span><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
           <button class="button button-ghost" id="heroTrackButton" type="button"><i class="fa-solid fa-clock-rotate-left" aria-hidden="true"></i><span>Cek Transaksi</span></button>
         </div>
-        <div class="hero-stats" aria-label="Keunggulan layanan">
+        <div class="hero-stats" aria-label="Keunggulan Daulay Storee">
           <div><strong>24/7</strong><span>Siap melayani</span></div>
-          <div><strong>Instan</strong><span>Katalog langsung</span></div>
-          <div><strong>Aman</strong><span>API di backend</span></div>
+          <div><strong>Murah</strong><span>Harga kompetitif</span></div>
+          <div><strong>Aman</strong><span>Validasi akun</span></div>
         </div>
       </div>
+
       <div class="hero-visual reveal" aria-hidden="true">
         <div class="hero-grid"></div>
-        <div class="floating-chip chip-one"><i class="fa-solid fa-gem"></i><span>Pilih Diamond</span></div>
-        <div class="floating-chip chip-two"><i class="fa-solid fa-shield-halved"></i><span>Secure Checkout</span></div>
+        <div class="floating-chip chip-one"><i class="fa-solid fa-gem"></i><span>Diamond Murah</span></div>
+        <div class="floating-chip chip-two"><i class="fa-solid fa-shield-halved"></i><span>Top Up Aman</span></div>
         <div class="game-orb"><div class="orb-ring ring-one"></div><div class="orb-ring ring-two"></div><div class="orb-core"><i class="fa-solid fa-gamepad"></i></div></div>
         <div class="energy-line line-one"></div><div class="energy-line line-two"></div>
+        <div class="flame-field"><span class="flame"></span><span class="flame"></span><span class="flame"></span><span class="flame"></span><span class="flame"></span><span class="flame"></span><span class="flame"></span></div>
       </div>
     </section>
 
     <section class="games-section" id="games" aria-labelledby="gamesTitle">
       <div class="section-heading reveal">
-        <div><span class="section-label">PILIH GAME FAVORIT</span><h2 id="gamesTitle">Mulai top up dalam hitungan detik.</h2></div>
+        <div>
+          <span class="section-label">TOP UP GAME MURAH</span>
+          <h2 id="gamesTitle">Pilih game favorit dan top up dalam hitungan detik.</h2>
+        </div>
         <div class="search-box"><i class="fa-solid fa-search" aria-hidden="true"></i><input type="search" id="gameSearch" placeholder="Cari game..." autocomplete="off" aria-label="Cari game" /></div>
       </div>
       <div class="game-grid" id="gameGrid"><p class="game-loading">Memuat katalog game UniPlay...</p></div>
       <p id="emptySearch" class="empty-search" hidden>Game tidak ditemukan. Coba kata kunci lain.</p>
     </section>
 
-    <section class="features-section" id="keunggulan" aria-label="Keunggulan NovaTopup">
-      <article class="feature-card reveal"><div class="feature-icon violet" aria-hidden="true"><i class="fa-solid fa-bolt"></i></div><h3>Katalog Langsung</h3><p>Game dan nominal dimuat langsung dari katalog UniPlay.</p></article>
-      <article class="feature-card reveal"><div class="feature-icon pink" aria-hidden="true"><i class="fa-solid fa-lock"></i></div><h3>Data Terjaga</h3><p>API key dan akses UniPlay hanya diproses pada backend Worker.</p></article>
-      <article class="feature-card reveal"><div class="feature-icon cyan" aria-hidden="true"><i class="fa-solid fa-circle-check"></i></div><h3>Cek ID Akun</h3><p>Validasi akun dilakukan sebelum tahap transaksi dilanjutkan.</p></article>
+    <section class="features-section" id="keunggulan" aria-label="Keunggulan Daulay Storee">
+      <article class="feature-card reveal"><div class="feature-icon violet" aria-hidden="true"><i class="fa-solid fa-tags"></i></div><h3>Top Up Harga Murah</h3><p>Dapatkan pilihan nominal game dengan harga kompetitif untuk kebutuhan top up Anda.</p></article>
+      <article class="feature-card reveal"><div class="feature-icon pink" aria-hidden="true"><i class="fa-solid fa-bolt"></i></div><h3>Top Up Cepat</h3><p>Katalog game dan nominal dimuat langsung agar proses pemilihan produk lebih praktis.</p></article>
+      <article class="feature-card reveal"><div class="feature-icon cyan" aria-hidden="true"><i class="fa-solid fa-shield-halved"></i></div><h3>Validasi Akun Aman</h3><p>Periksa akun tujuan sebelum transaksi dilanjutkan agar data top up lebih tepat.</p></article>
     </section>
 
     <section class="steps-section" id="cara-order" aria-labelledby="stepsTitle">
-      <div class="section-heading reveal"><div><span class="section-label">CARA ORDER</span><h2 id="stepsTitle">Praktis dalam tiga langkah.</h2></div></div>
+      <div class="section-heading reveal"><div><span class="section-label">CARA TOP UP</span><h2 id="stepsTitle">Top up game murah dalam tiga langkah.</h2></div></div>
       <div class="steps-grid">
-        <article class="step reveal"><span class="step-number">01</span><i class="fa-solid fa-gamepad" aria-hidden="true"></i><h3>Pilih Game</h3><p>Pilih game dan nominal top-up yang Anda perlukan.</p></article>
-        <article class="step reveal"><span class="step-number">02</span><i class="fa-solid fa-id-card" aria-hidden="true"></i><h3>Masukkan ID</h3><p>Isi User ID dan Server/Zone dengan tepat bila diperlukan.</p></article>
-        <article class="step reveal"><span class="step-number">03</span><i class="fa-solid fa-circle-check" aria-hidden="true"></i><h3>Cek Akun</h3><p>Pastikan nama akun tujuan sudah sesuai sebelum transaksi.</p></article>
+        <article class="step reveal"><span class="step-number">01</span><i class="fa-solid fa-gamepad" aria-hidden="true"></i><h3>Pilih Game</h3><p>Pilih game favorit dan nominal top up yang Anda perlukan.</p></article>
+        <article class="step reveal"><span class="step-number">02</span><i class="fa-solid fa-id-card" aria-hidden="true"></i><h3>Masukkan ID</h3><p>Isi User ID dan Server atau Zone ID dengan tepat bila diperlukan.</p></article>
+        <article class="step reveal"><span class="step-number">03</span><i class="fa-solid fa-circle-check" aria-hidden="true"></i><h3>Cek Akun</h3><p>Pastikan nama akun tujuan telah sesuai sebelum melanjutkan pesanan.</p></article>
       </div>
     </section>
   </main>
 
   <footer>
-    <a href="#" class="brand" aria-label="NovaTopup beranda"><span class="brand-icon" aria-hidden="true"><i class="fa-solid fa-bolt"></i></span><span>NOVA<span>TOPUP</span></span></a>
-    <p>© <span id="year"></span> NovaTopup. Top up cepat untuk para pemain.</p>
+    <a href="#" class="brand" aria-label="Daulay Storee beranda">
+      <video class="brand-logo-animation" autoplay muted loop playsinline preload="none" aria-label="Logo animasi Daulay Storee">
+        <source src="./iniaja.mp4" type="video/mp4" />
+        Daulay Storee
+      </video>
+    </a>
+    <p>© <span id="year"></span> Daulay Storee. Top up game murah, cepat, dan aman.</p>
   </footer>
 
   <div class="modal-backdrop" id="topupModal" aria-hidden="true">
