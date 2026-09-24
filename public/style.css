@@ -41,6 +41,7 @@
   pointer-events: none;
 }
 
+.game-card:hover,
 .feature-card:hover,
 .step:hover,
 .nominal-card:hover {
@@ -52,6 +53,7 @@
   transform: translateY(-7px);
 }
 
+.game-card:hover::after,
 .feature-card:hover::after,
 .step:hover::after,
 .nominal-card:hover::after,
@@ -75,40 +77,41 @@
   color: #fff;
 }
 
-.feature-card {
+.reveal.visible.game-card,
+.reveal.visible.feature-card,
+.reveal.visible.step {
   animation: card-reveal 0.7s both;
 }
 
-.feature-card:nth-child(1) {
-  animation-delay: 0.08s;
+.reveal.visible.game-card:nth-child(1),
+.reveal.visible.feature-card:nth-child(1),
+.reveal.visible.step:nth-child(1) {
+  animation-delay: 0.05s;
 }
 
-.feature-card:nth-child(2) {
-  animation-delay: 0.17s;
+.reveal.visible.game-card:nth-child(2),
+.reveal.visible.feature-card:nth-child(2),
+.reveal.visible.step:nth-child(2) {
+  animation-delay: 0.14s;
 }
 
-.feature-card:nth-child(3) {
-  animation-delay: 0.26s;
+.reveal.visible.game-card:nth-child(3),
+.reveal.visible.feature-card:nth-child(3),
+.reveal.visible.step:nth-child(3) {
+  animation-delay: 0.23s;
 }
 
-.game-card {
-  animation: card-reveal 0.62s both;
+.reveal.visible.game-card:nth-child(4) {
+  animation-delay: 0.32s;
 }
 
-.game-card:nth-child(1) { animation-delay: 0.04s; }
-.game-card:nth-child(2) { animation-delay: 0.08s; }
-.game-card:nth-child(3) { animation-delay: 0.12s; }
-.game-card:nth-child(4) { animation-delay: 0.16s; }
-.game-card:nth-child(5) { animation-delay: 0.2s; }
-.game-card:nth-child(6) { animation-delay: 0.24s; }
-
-.step {
-  animation: card-reveal 0.72s both;
+.reveal.visible.game-card:nth-child(5) {
+  animation-delay: 0.41s;
 }
 
-.step:nth-child(1) { animation-delay: 0.08s; }
-.step:nth-child(2) { animation-delay: 0.18s; }
-.step:nth-child(3) { animation-delay: 0.28s; }
+.reveal.visible.game-card:nth-child(6) {
+  animation-delay: 0.5s;
+}
 
 .button-primary {
   position: relative;
@@ -217,16 +220,16 @@
 }
 
 @media (max-width: 600px) {
+  .game-card:hover,
   .feature-card:hover,
   .step:hover,
-  .nominal-card:hover,
-  .game-card:hover {
+  .nominal-card:hover {
     transform: translateY(-3px);
   }
 
-  .game-card,
-  .feature-card,
-  .step {
+  .reveal.visible.game-card,
+  .reveal.visible.feature-card,
+  .reveal.visible.step {
     animation-delay: 0s;
   }
 }
