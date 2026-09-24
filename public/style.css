@@ -89,10 +89,12 @@ a { color: inherit; text-decoration: none; }
   overflow: hidden;
 }
 
-/* video.gif memenuhi area lingkaran orb-core */
+/* Membesarkan GIF D agar lebih penuh ke border lingkaran */
 .orb-core .d-icon-gif {
-  width: 100%;
-  height: 100%;
+  width: 132%;
+  height: 132%;
+  max-width: none;
+  max-height: none;
   object-fit: cover;
   object-position: center;
   border-radius: 50%;
