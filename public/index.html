@@ -13,7 +13,7 @@
   <link rel="canonical" href="https://daulaystore.my.id/" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="preload" href="./iniaja.gif" as="video" type="video/mp4" />
+  <link rel="preload" href="./iniaja.gif" as="image" type="image/gif" />
 
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="id_ID" />
@@ -30,7 +30,7 @@
 
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
-  <link rel="stylesheet" href="./style.css?v=daulaystoree-20260925" />
+  <link rel="stylesheet" href="./style.css?v=daulaystoree-20260925-gif" />
 
   <style>
     .api-game-cover { overflow: hidden; background: linear-gradient(135deg, #0b4eab, #07101f); }
@@ -38,12 +38,92 @@
     .api-game-cover > span { display: grid; width: 100%; height: 100%; place-items: center; font-weight: 800; font-size: 1.15rem; letter-spacing: .08em; }
     .game-loading { grid-column: 1 / -1; margin: 0; padding: 1.25rem; color: #c9eaff; text-align: center; }
 
-    .brand { display: inline-flex; align-items: center; width: min(285px, 58vw); max-width: 285px; }
-    .brand-logo-animation { display: block; width: 100%; height: auto; max-height: 58px; object-fit: contain; object-position: left center; }
+    /* Logo utama memakai iniaja.gif: besar, lebar, tanpa background. */
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      flex: 0 0 auto;
+      width: min(420px, 64vw);
+      max-width: 420px;
+      overflow: visible;
+      background: transparent;
+      border: 0;
+      box-shadow: none;
+    }
+
+    .brand-logo-animation {
+      display: block;
+      width: 100%;
+      height: 76px;
+      object-fit: contain;
+      object-position: left center;
+      background: transparent;
+      border: 0;
+      box-shadow: none;
+    }
+
+    footer .brand {
+      width: min(320px, 70vw);
+      max-width: 320px;
+    }
+
+    footer .brand-logo-animation {
+      height: 60px;
+    }
+
+    /* GIF huruf D, file: video.gif. Pengganti ikon gamepad. */
+    .d-icon-gif {
+      display: block;
+      width: 68px;
+      height: 68px;
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      object-position: center;
+      background: transparent;
+      border: 0;
+      border-radius: 0;
+      box-shadow: none;
+    }
+
+    .step .d-icon-gif {
+      width: 42px;
+      height: 42px;
+      margin-bottom: 2px;
+    }
+
+    @media (max-width: 980px) {
+      .nav-menu { display: none; }
+    }
 
     @media (max-width: 600px) {
-      .brand { width: min(190px, 53vw); }
-      .brand-logo-animation { max-height: 43px; }
+      .brand {
+        width: min(265px, 64vw);
+        max-width: 265px;
+      }
+
+      .brand-logo-animation {
+        height: 54px;
+      }
+
+      footer .brand {
+        width: min(250px, 70vw);
+        max-width: 250px;
+      }
+
+      footer .brand-logo-animation {
+        height: 50px;
+      }
+
+      .d-icon-gif {
+        width: 57px;
+        height: 57px;
+      }
+
+      .step .d-icon-gif {
+        width: 38px;
+        height: 38px;
+      }
     }
   </style>
 
@@ -78,10 +158,7 @@
 
   <header class="navbar">
     <a href="#" class="brand" aria-label="Daulay Storee beranda">
-      <video class="brand-logo-animation" autoplay muted loop playsinline preload="metadata" aria-label="Logo animasi Daulay Storee">
-        <source src="./iniaja.gif" type="video/mp4" />
-        Daulay Storee
-      </video>
+      <img class="brand-logo-animation" src="./iniaja.gif" alt="Daulay Storee" />
     </a>
 
     <nav class="nav-menu" aria-label="Navigasi utama">
@@ -116,18 +193,15 @@
         <div class="hero-grid"></div>
         <div class="floating-chip chip-one"><i class="fa-solid fa-gem"></i><span>Diamond Murah</span></div>
         <div class="floating-chip chip-two"><i class="fa-solid fa-shield-halved"></i><span>Top Up Aman</span></div>
-        <div class="game-orb"><div class="orb-ring ring-one"></div><div class="orb-ring ring-two"></div><div class="orb-core"><i <video
-  class="d-icon-video"
-  autoplay
-  muted
-  loop
-  playsinline
-  preload="auto"
-  aria-label="Daulay Storee"
->
-  <source src="./video.gif" type="video/gif" />
-</video>"></i></div></div>
-        <div class="energy-line line-one"></div><div class="energy-line line-two"></div>
+        <div class="game-orb">
+          <div class="orb-ring ring-one"></div>
+          <div class="orb-ring ring-two"></div>
+          <div class="orb-core">
+            <img class="d-icon-gif" src="./video.gif" alt="Daulay Storee" />
+          </div>
+        </div>
+        <div class="energy-line line-one"></div>
+        <div class="energy-line line-two"></div>
         <div class="flame-field"><span class="flame"></span><span class="flame"></span><span class="flame"></span><span class="flame"></span><span class="flame"></span><span class="flame"></span><span class="flame"></span></div>
       </div>
     </section>
@@ -153,7 +227,7 @@
     <section class="steps-section" id="cara-order" aria-labelledby="stepsTitle">
       <div class="section-heading reveal"><div><span class="section-label">CARA TOP UP</span><h2 id="stepsTitle">Top up game murah dalam tiga langkah.</h2></div></div>
       <div class="steps-grid">
-        <article class="step reveal"><span class="step-number">01</span><i class="fa-solid fa-gamepad" aria-hidden="true"></i><h3>Pilih Game</h3><p>Pilih game favorit dan nominal top up yang Anda perlukan.</p></article>
+        <article class="step reveal"><span class="step-number">01</span><img class="d-icon-gif" src="./video.gif" alt="Ikon Daulay Storee" /><h3>Pilih Game</h3><p>Pilih game favorit dan nominal top up yang Anda perlukan.</p></article>
         <article class="step reveal"><span class="step-number">02</span><i class="fa-solid fa-id-card" aria-hidden="true"></i><h3>Masukkan ID</h3><p>Isi User ID dan Server atau Zone ID dengan tepat bila diperlukan.</p></article>
         <article class="step reveal"><span class="step-number">03</span><i class="fa-solid fa-circle-check" aria-hidden="true"></i><h3>Cek Akun</h3><p>Pastikan nama akun tujuan telah sesuai sebelum melanjutkan pesanan.</p></article>
       </div>
@@ -162,10 +236,7 @@
 
   <footer>
     <a href="#" class="brand" aria-label="Daulay Storee beranda">
-      <video class="brand-logo-animation" autoplay muted loop playsinline preload="none" aria-label="Logo animasi Daulay Storee">
-        <source src="./iniaja.gif" type="video/mp4" />
-        Daulay Storee
-      </video>
+      <img class="brand-logo-animation" src="./iniaja.gif" alt="Daulay Storee" />
     </a>
     <p>© <span id="year"></span> Daulay Storee. Top up game murah, cepat, dan aman.</p>
   </footer>
