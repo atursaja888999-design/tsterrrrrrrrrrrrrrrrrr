@@ -2,14 +2,12 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8" />
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta
     name="description"
     content="Platform top up game cepat, aman, dan otomatis."
   />
+  <meta name="theme-color" content="#090713" />
   <title>NovaTopup — Top Up Game Instan</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -22,41 +20,44 @@
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
   />
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="./style.css" />
 </head>
+
 <body>
-  <div class="noise"></div>
-  <div class="orb orb-one"></div>
-  <div class="orb orb-two"></div>
-  <div class="orb orb-three"></div>
+  <div class="noise" aria-hidden="true"></div>
+  <div class="orb orb-one" aria-hidden="true"></div>
+  <div class="orb orb-two" aria-hidden="true"></div>
+  <div class="orb orb-three" aria-hidden="true"></div>
 
   <header class="navbar">
-    <a href="#" class="brand">
-      <span class="brand-icon"><i class="fa-solid fa-bolt"></i></span>
+    <a href="#" class="brand" aria-label="NovaTopup beranda">
+      <span class="brand-icon" aria-hidden="true">
+        <i class="fa-solid fa-bolt"></i>
+      </span>
       <span>NOVA<span>TOPUP</span></span>
     </a>
 
-    <nav class="nav-menu">
+    <nav class="nav-menu" aria-label="Navigasi utama">
       <a href="#games">Game</a>
       <a href="#cara-order">Cara Order</a>
       <a href="#keunggulan">Keunggulan</a>
     </nav>
 
-    <button class="nav-cta" id="openTrackButton">
-      <i class="fa-solid fa-magnifying-glass"></i>
-      Lacak Pesanan
+    <button class="nav-cta" id="openTrackButton" type="button">
+      <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+      <span>Lacak Pesanan</span>
     </button>
   </header>
 
   <main>
-    <section class="hero">
+    <section class="hero" aria-labelledby="heroTitle">
       <div class="hero-copy reveal">
         <div class="eyebrow">
-          <span class="pulse-dot"></span>
+          <span class="pulse-dot" aria-hidden="true"></span>
           Layanan top up otomatis 24/7
         </div>
 
-        <h1>
+        <h1 id="heroTitle">
           Naikkan Level,
           <span>Tanpa Menunggu.</span>
         </h1>
@@ -68,17 +69,17 @@
 
         <div class="hero-actions">
           <a href="#games" class="button button-primary">
-            Top Up Sekarang
-            <i class="fa-solid fa-arrow-right"></i>
+            <span>Top Up Sekarang</span>
+            <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
           </a>
 
-          <button class="button button-ghost" id="heroTrackButton">
-            <i class="fa-solid fa-clock-rotate-left"></i>
-            Cek Transaksi
+          <button class="button button-ghost" id="heroTrackButton" type="button">
+            <i class="fa-solid fa-clock-rotate-left" aria-hidden="true"></i>
+            <span>Cek Transaksi</span>
           </button>
         </div>
 
-        <div class="hero-stats">
+        <div class="hero-stats" aria-label="Keunggulan layanan">
           <div>
             <strong>24/7</strong>
             <span>Siap melayani</span>
@@ -94,12 +95,14 @@
         </div>
       </div>
 
-      <div class="hero-visual reveal">
+      <div class="hero-visual reveal" aria-hidden="true">
         <div class="hero-grid"></div>
+
         <div class="floating-chip chip-one">
           <i class="fa-solid fa-gem"></i>
           <span>Diamond Masuk</span>
         </div>
+
         <div class="floating-chip chip-two">
           <i class="fa-solid fa-shield-halved"></i>
           <span>Secure Checkout</span>
@@ -118,20 +121,21 @@
       </div>
     </section>
 
-    <section class="games-section" id="games">
+    <section class="games-section" id="games" aria-labelledby="gamesTitle">
       <div class="section-heading reveal">
         <div>
           <span class="section-label">PILIH GAME FAVORIT</span>
-          <h2>Mulai top up dalam hitungan detik.</h2>
+          <h2 id="gamesTitle">Mulai top up dalam hitungan detik.</h2>
         </div>
 
         <div class="search-box">
-          <i class="fa-solid fa-search"></i>
+          <i class="fa-solid fa-search" aria-hidden="true"></i>
           <input
             type="search"
             id="gameSearch"
             placeholder="Cari game..."
             autocomplete="off"
+            aria-label="Cari game"
           />
         </div>
       </div>
@@ -139,6 +143,7 @@
       <div class="game-grid" id="gameGrid">
         <button
           class="game-card featured reveal"
+          type="button"
           data-game="Mobile Legends"
           data-category="MOBA"
           data-image="ML"
@@ -153,11 +158,14 @@
             <h3>Mobile Legends</h3>
             <p>Diamond mulai Rp1.500</p>
           </div>
-          <span class="arrow-circle"><i class="fa-solid fa-arrow-right"></i></span>
+          <span class="arrow-circle" aria-hidden="true">
+            <i class="fa-solid fa-arrow-right"></i>
+          </span>
         </button>
 
         <button
           class="game-card reveal"
+          type="button"
           data-game="Free Fire"
           data-category="Battle Royale"
           data-image="FF"
@@ -172,11 +180,14 @@
             <h3>Free Fire</h3>
             <p>Diamond mulai Rp1.000</p>
           </div>
-          <span class="arrow-circle"><i class="fa-solid fa-arrow-right"></i></span>
+          <span class="arrow-circle" aria-hidden="true">
+            <i class="fa-solid fa-arrow-right"></i>
+          </span>
         </button>
 
         <button
           class="game-card reveal"
+          type="button"
           data-game="PUBG Mobile"
           data-category="Battle Royale"
           data-image="PUBG"
@@ -191,11 +202,14 @@
             <h3>PUBG Mobile</h3>
             <p>UC mulai Rp2.000</p>
           </div>
-          <span class="arrow-circle"><i class="fa-solid fa-arrow-right"></i></span>
+          <span class="arrow-circle" aria-hidden="true">
+            <i class="fa-solid fa-arrow-right"></i>
+          </span>
         </button>
 
         <button
           class="game-card reveal"
+          type="button"
           data-game="Valorant"
           data-category="FPS"
           data-image="VAL"
@@ -210,11 +224,14 @@
             <h3>Valorant</h3>
             <p>Points mulai Rp15.000</p>
           </div>
-          <span class="arrow-circle"><i class="fa-solid fa-arrow-right"></i></span>
+          <span class="arrow-circle" aria-hidden="true">
+            <i class="fa-solid fa-arrow-right"></i>
+          </span>
         </button>
 
         <button
           class="game-card reveal"
+          type="button"
           data-game="Genshin Impact"
           data-category="RPG"
           data-image="GI"
@@ -229,11 +246,14 @@
             <h3>Genshin Impact</h3>
             <p>Genesis Crystal tersedia</p>
           </div>
-          <span class="arrow-circle"><i class="fa-solid fa-arrow-right"></i></span>
+          <span class="arrow-circle" aria-hidden="true">
+            <i class="fa-solid fa-arrow-right"></i>
+          </span>
         </button>
 
         <button
           class="game-card reveal"
+          type="button"
           data-game="Honor of Kings"
           data-category="MOBA"
           data-image="HOK"
@@ -248,7 +268,9 @@
             <h3>Honor of Kings</h3>
             <p>Token mulai Rp3.000</p>
           </div>
-          <span class="arrow-circle"><i class="fa-solid fa-arrow-right"></i></span>
+          <span class="arrow-circle" aria-hidden="true">
+            <i class="fa-solid fa-arrow-right"></i>
+          </span>
         </button>
       </div>
 
@@ -257,9 +279,13 @@
       </p>
     </section>
 
-    <section class="features-section" id="keunggulan">
+    <section
+      class="features-section"
+      id="keunggulan"
+      aria-label="Keunggulan NovaTopup"
+    >
       <article class="feature-card reveal">
-        <div class="feature-icon violet">
+        <div class="feature-icon violet" aria-hidden="true">
           <i class="fa-solid fa-bolt"></i>
         </div>
         <h3>Serba Instan</h3>
@@ -267,7 +293,7 @@
       </article>
 
       <article class="feature-card reveal">
-        <div class="feature-icon pink">
+        <div class="feature-icon pink" aria-hidden="true">
           <i class="fa-solid fa-lock"></i>
         </div>
         <h3>Data Terjaga</h3>
@@ -275,7 +301,7 @@
       </article>
 
       <article class="feature-card reveal">
-        <div class="feature-icon cyan">
+        <div class="feature-icon cyan" aria-hidden="true">
           <i class="fa-solid fa-headset"></i>
         </div>
         <h3>Siap Membantu</h3>
@@ -283,51 +309,66 @@
       </article>
     </section>
 
-    <section class="steps-section" id="cara-order">
+    <section class="steps-section" id="cara-order" aria-labelledby="stepsTitle">
       <div class="section-heading reveal">
         <div>
           <span class="section-label">CARA ORDER</span>
-          <h2>Praktis dalam tiga langkah.</h2>
+          <h2 id="stepsTitle">Praktis dalam tiga langkah.</h2>
         </div>
       </div>
 
       <div class="steps-grid">
-        <div class="step reveal">
+        <article class="step reveal">
           <span class="step-number">01</span>
-          <i class="fa-solid fa-gamepad"></i>
+          <i class="fa-solid fa-gamepad" aria-hidden="true"></i>
           <h3>Pilih Game</h3>
           <p>Pilih game dan nominal top-up yang Anda perlukan.</p>
-        </div>
+        </article>
 
-        <div class="step reveal">
+        <article class="step reveal">
           <span class="step-number">02</span>
-          <i class="fa-solid fa-id-card"></i>
+          <i class="fa-solid fa-id-card" aria-hidden="true"></i>
           <h3>Masukkan ID</h3>
           <p>Isi User ID dan Server/Zone dengan tepat.</p>
-        </div>
+        </article>
 
-        <div class="step reveal">
+        <article class="step reveal">
           <span class="step-number">03</span>
-          <i class="fa-solid fa-rocket"></i>
+          <i class="fa-solid fa-rocket" aria-hidden="true"></i>
           <h3>Pesanan Diproses</h3>
           <p>Sistem mengirim pesanan melalui integrasi API otomatis.</p>
-        </div>
+        </article>
       </div>
     </section>
   </main>
 
   <footer>
-    <a href="#" class="brand">
-      <span class="brand-icon"><i class="fa-solid fa-bolt"></i></span>
+    <a href="#" class="brand" aria-label="NovaTopup beranda">
+      <span class="brand-icon" aria-hidden="true">
+        <i class="fa-solid fa-bolt"></i>
+      </span>
       <span>NOVA<span>TOPUP</span></span>
     </a>
-    <p>© <span id="year"></span> NovaTopup. Top up cepat untuk para pemain.</p>
+
+    <p>
+      © <span id="year"></span> NovaTopup. Top up cepat untuk para pemain.
+    </p>
   </footer>
 
   <div class="modal-backdrop" id="topupModal" aria-hidden="true">
-    <section class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-      <button class="modal-close" id="closeModalButton" aria-label="Tutup modal">
-        <i class="fa-solid fa-xmark"></i>
+    <section
+      class="modal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="modalTitle"
+    >
+      <button
+        class="modal-close"
+        id="closeModalButton"
+        type="button"
+        aria-label="Tutup modal top up"
+      >
+        <i class="fa-solid fa-xmark" aria-hidden="true"></i>
       </button>
 
       <div class="modal-header">
@@ -373,12 +414,22 @@
           </label>
         </div>
 
-        <button type="button" class="check-id-button" id="checkIdButton">
-          <i class="fa-solid fa-circle-check"></i>
-          Cek ID Akun
+        <button
+          type="button"
+          class="check-id-button"
+          id="checkIdButton"
+        >
+          <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+          <span>Cek ID Akun</span>
         </button>
 
-        <div class="account-result" id="accountResult" hidden></div>
+        <div
+          class="account-result"
+          id="accountResult"
+          role="status"
+          aria-live="polite"
+          hidden
+        ></div>
 
         <div class="form-step second-step">
           <span class="form-step-number">2</span>
@@ -389,19 +440,42 @@
         </div>
 
         <div class="nominal-grid" id="nominalGrid">
-          <button type="button" class="nominal-card active" data-code="ML86" data-price="20000">
+          <button
+            type="button"
+            class="nominal-card active"
+            data-code="ML86"
+            data-price="20000"
+          >
             <strong>86 Diamond</strong>
             <span>Rp20.000</span>
           </button>
-          <button type="button" class="nominal-card" data-code="ML172" data-price="40000">
+
+          <button
+            type="button"
+            class="nominal-card"
+            data-code="ML172"
+            data-price="40000"
+          >
             <strong>172 Diamond</strong>
             <span>Rp40.000</span>
           </button>
-          <button type="button" class="nominal-card" data-code="ML257" data-price="60000">
+
+          <button
+            type="button"
+            class="nominal-card"
+            data-code="ML257"
+            data-price="60000"
+          >
             <strong>257 Diamond</strong>
             <span>Rp60.000</span>
           </button>
-          <button type="button" class="nominal-card" data-code="ML514" data-price="120000">
+
+          <button
+            type="button"
+            class="nominal-card"
+            data-code="ML514"
+            data-price="120000"
+          >
             <strong>514 Diamond</strong>
             <span>Rp120.000</span>
           </button>
@@ -442,13 +516,17 @@
           </div>
         </div>
 
-        <button type="submit" class="button button-primary order-button" id="orderButton">
+        <button
+          type="submit"
+          class="button button-primary order-button"
+          id="orderButton"
+        >
           <span>Proses Pesanan</span>
-          <i class="fa-solid fa-arrow-right"></i>
+          <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
         </button>
 
         <p class="form-note">
-          <i class="fa-solid fa-shield-halved"></i>
+          <i class="fa-solid fa-shield-halved" aria-hidden="true"></i>
           Data API dan credential transaksi tidak ditampilkan ke browser.
         </p>
       </form>
@@ -456,18 +534,28 @@
   </div>
 
   <div class="modal-backdrop" id="trackModal" aria-hidden="true">
-    <section class="modal track-modal" role="dialog" aria-modal="true">
-      <button class="modal-close" id="closeTrackButton" aria-label="Tutup modal">
-        <i class="fa-solid fa-xmark"></i>
+    <section
+      class="modal track-modal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="trackingTitle"
+    >
+      <button
+        class="modal-close"
+        id="closeTrackButton"
+        type="button"
+        aria-label="Tutup modal lacak pesanan"
+      >
+        <i class="fa-solid fa-xmark" aria-hidden="true"></i>
       </button>
 
       <div class="modal-header">
-        <div class="mini-game-cover tracking-icon">
+        <div class="mini-game-cover tracking-icon" aria-hidden="true">
           <i class="fa-solid fa-magnifying-glass"></i>
         </div>
         <div>
           <span class="section-label">LACAK PESANAN</span>
-          <h2>Status transaksi Anda</h2>
+          <h2 id="trackingTitle">Status transaksi Anda</h2>
         </div>
       </div>
 
@@ -484,22 +572,34 @@
 
         <button type="submit" class="button button-primary order-button">
           <span>Cek Status</span>
-          <i class="fa-solid fa-magnifying-glass"></i>
+          <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
         </button>
       </form>
 
-      <div class="tracking-result" id="trackingResult" hidden></div>
+      <div
+        class="tracking-result"
+        id="trackingResult"
+        role="status"
+        aria-live="polite"
+        hidden
+      ></div>
     </section>
   </div>
 
-  <div class="toast-container" id="toastContainer"></div>
+  <div
+    class="toast-container"
+    id="toastContainer"
+    aria-live="polite"
+    aria-atomic="true"
+  ></div>
+
   <div class="loader-overlay" id="loaderOverlay" hidden>
-    <div class="loader-content">
-      <div class="loader-spinner"></div>
+    <div class="loader-content" role="status" aria-live="polite">
+      <div class="loader-spinner" aria-hidden="true"></div>
       <p id="loaderText">Memproses transaksi...</p>
     </div>
   </div>
 
-  <script src="app.js"></script>
+  <script src="./app.js"></script>
 </body>
 </html>
