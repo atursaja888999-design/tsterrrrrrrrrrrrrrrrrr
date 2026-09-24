@@ -264,4 +264,340 @@ input:focus { border-color: rgba(88, 187, 255, .75); box-shadow: 0 0 0 3px rgba(
   .flame { transform: scale(.72); transform-origin: bottom center; }
 }
 
+/* ==========================================
+   ANIMASI OMBak / AIR — FULL HOMEPAGE
+   Tempel di bagian PALING BAWAH style.css
+   ========================================== */
+
+/* Background utama halaman */
+html {
+  min-height: 100%;
+  background: #03070e;
+}
+
+body {
+  position: relative;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background:
+    radial-gradient(circle at 12% 8%, rgba(0, 156, 255, 0.18), transparent 26%),
+    radial-gradient(circle at 88% 24%, rgba(23, 95, 255, 0.15), transparent 30%),
+    radial-gradient(circle at 48% 78%, rgba(0, 174, 255, 0.08), transparent 36%),
+    linear-gradient(180deg, #03070e 0%, #06152a 45%, #04101f 100%);
+}
+
+/* Menjaga semua isi web berada di atas background animasi */
+.navbar,
+.promo-banner,
+main,
+footer,
+.modal-backdrop {
+  position: relative;
+  z-index: 2;
+}
+
+/* Modal harus tetap paling atas */
+.modal-backdrop {
+  z-index: 100;
+}
+
+/* Layer animasi yang menutup satu layar dan tetap saat scroll */
+.ocean-background {
+  position: fixed;
+  z-index: 0;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse at center, rgba(18, 149, 255, 0.08), transparent 68%);
+}
+
+/* Cahaya biru lembut di background */
+.ocean-glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(32px);
+  opacity: 0.55;
+  animation: oceanGlowMove 16s ease-in-out infinite alternate;
+}
+
+.glow-one {
+  top: 8%;
+  left: -14%;
+  width: min(48vw, 620px);
+  height: min(48vw, 620px);
+  background: rgba(0, 155, 255, 0.17);
+}
+
+.glow-two {
+  right: -15%;
+  bottom: 8%;
+  width: min(52vw, 700px);
+  height: min(52vw, 700px);
+  background: rgba(21, 87, 255, 0.16);
+  animation-delay: -8s;
+}
+
+/* Riak cahaya tipis, seperti pantulan air */
+.water-ripple {
+  position: absolute;
+  width: 150vmax;
+  height: 58vmax;
+  left: 50%;
+  border: 1px solid rgba(112, 211, 255, 0.10);
+  border-radius: 50%;
+  transform: translateX(-50%) rotate(-11deg);
+  animation: rippleDrift 19s ease-in-out infinite alternate;
+}
+
+.ripple-one {
+  top: 5%;
+}
+
+.ripple-two {
+  top: 36%;
+  width: 125vmax;
+  height: 48vmax;
+  opacity: 0.7;
+  animation-delay: -7s;
+  animation-duration: 24s;
+}
+
+.ripple-three {
+  top: 70%;
+  width: 175vmax;
+  height: 65vmax;
+  opacity: 0.45;
+  animation-delay: -12s;
+  animation-duration: 28s;
+}
+
+/* Ombak berada di bawah viewport */
+.ocean-wave {
+  position: absolute;
+  left: -30%;
+  bottom: -150px;
+  width: 165%;
+  height: 330px;
+  border-radius: 44% 56% 0 0;
+  transform-origin: center bottom;
+  will-change: transform;
+}
+
+/* Ombak belakang */
+.wave-back {
+  bottom: -188px;
+  background: rgba(15, 123, 235, 0.10);
+  filter: blur(2px);
+  animation: waterWaveBack 19s ease-in-out infinite alternate;
+}
+
+/* Ombak tengah */
+.wave-middle {
+  bottom: -166px;
+  background: rgba(14, 150, 255, 0.13);
+  animation: waterWaveMiddle 14s ease-in-out infinite alternate;
+}
+
+/* Ombak paling depan */
+.wave-front {
+  bottom: -205px;
+  background: rgba(0, 75, 174, 0.16);
+  animation: waterWaveFront 10s ease-in-out infinite alternate;
+}
+
+/* Gelembung */
+.water-bubble {
+  position: absolute;
+  bottom: -120px;
+  display: block;
+  border: 1px solid rgba(119, 217, 255, 0.32);
+  border-radius: 50%;
+  background:
+    radial-gradient(
+      circle at 30% 25%,
+      rgba(255, 255, 255, 0.75) 0 5%,
+      rgba(132, 215, 255, 0.20) 18%,
+      rgba(10, 119, 225, 0.06) 62%,
+      transparent 100%
+    );
+  box-shadow:
+    inset -8px -9px 20px rgba(0, 100, 220, 0.12),
+    0 5px 22px rgba(0, 146, 255, 0.09);
+  opacity: 0;
+  animation: bubbleFloat linear infinite;
+  will-change: transform, opacity;
+}
+
+.bubble-one {
+  left: 8%;
+  width: 58px;
+  height: 58px;
+  animation-duration: 18s;
+  animation-delay: -3s;
+}
+
+.bubble-two {
+  left: 27%;
+  width: 25px;
+  height: 25px;
+  animation-duration: 12s;
+  animation-delay: -8s;
+}
+
+.bubble-three {
+  left: 55%;
+  width: 76px;
+  height: 76px;
+  animation-duration: 23s;
+  animation-delay: -14s;
+}
+
+.bubble-four {
+  left: 78%;
+  width: 40px;
+  height: 40px;
+  animation-duration: 16s;
+  animation-delay: -5s;
+}
+
+.bubble-five {
+  left: 93%;
+  width: 22px;
+  height: 22px;
+  animation-duration: 10s;
+  animation-delay: -1s;
+}
+
+/* Membuat card tetap terbaca, namun sedikit transparan */
+.game-card,
+.feature-card,
+.step,
+.search-box,
+.banner-slider {
+  backdrop-filter: blur(9px);
+}
+
+/* Jika background section lama Anda solid, override dengan transparansi */
+.games-section,
+.features-section,
+.steps-section {
+  position: relative;
+  background: transparent;
+}
+
+/* Pastikan footer masih punya kontras tinggi */
+footer {
+  background: rgba(3, 9, 19, 0.84);
+  backdrop-filter: blur(12px);
+}
+
+/* Animasi cahaya */
+@keyframes oceanGlowMove {
+  0% {
+    transform: translate3d(-2%, -2%, 0) scale(0.94);
+  }
+
+  100% {
+    transform: translate3d(8%, 5%, 0) scale(1.12);
+  }
+}
+
+/* Animasi riak */
+@keyframes rippleDrift {
+  0% {
+    transform: translateX(-50%) rotate(-11deg) scale(0.94);
+    opacity: 0.24;
+  }
+
+  100% {
+    transform: translateX(-47%) rotate(-7deg) scale(1.08);
+    opacity: 0.56;
+  }
+}
+
+/* Tiga kecepatan gerakan ombak */
+@keyframes waterWaveBack {
+  0% {
+    transform: translateX(-4%) rotate(-2deg) scaleY(0.88);
+  }
+
+  100% {
+    transform: translateX(5%) rotate(2deg) scaleY(1.08);
+  }
+}
+
+@keyframes waterWaveMiddle {
+  0% {
+    transform: translateX(3%) rotate(2deg) scaleY(0.94);
+  }
+
+  100% {
+    transform: translateX(-6%) rotate(-2deg) scaleY(1.1);
+  }
+}
+
+@keyframes waterWaveFront {
+  0% {
+    transform: translateX(-2%) rotate(-2deg) scaleY(0.92);
+  }
+
+  100% {
+    transform: translateX(7%) rotate(2deg) scaleY(1.12);
+  }
+}
+
+/* Gelembung naik dari bawah ke atas */
+@keyframes bubbleFloat {
+  0% {
+    transform: translate3d(0, 0, 0) scale(0.82);
+    opacity: 0;
+  }
+
+  12% {
+    opacity: 0.72;
+  }
+
+  50% {
+    transform: translate3d(30px, -48vh, 0) scale(1);
+    opacity: 0.55;
+  }
+
+  100% {
+    transform: translate3d(-20px, -125vh, 0) scale(1.13);
+    opacity: 0;
+  }
+}
+
+/* Optimasi tampilan mobile */
+@media (max-width: 600px) {
+  .ocean-wave {
+    left: -50%;
+    width: 210%;
+  }
+
+  .water-ripple {
+    width: 230vmax;
+  }
+
+  .bubble-three,
+  .bubble-five {
+    display: none;
+  }
+
+  .ocean-glow {
+    opacity: 0.36;
+  }
+}
+
+/* Hormati pengaturan pengguna yang mengurangi animasi */
+@media (prefers-reduced-motion: reduce) {
+  .ocean-glow,
+  .water-ripple,
+  .ocean-wave,
+  .water-bubble {
+    animation: none;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; } }
