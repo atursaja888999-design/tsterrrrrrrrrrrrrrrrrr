@@ -20,7 +20,12 @@
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
   />
-  <link rel="stylesheet" href="./style.css" />
+
+  <!-- Asset GitHub Pages: repo = tsterrrrrrrrrrrrrrrrrr -->
+  <link
+    rel="stylesheet"
+    href="/tsterrrrrrrrrrrrrrrrrr/public/style.css?v=20260924"
+  />
 </head>
 
 <body>
@@ -350,9 +355,7 @@
       <span>NOVA<span>TOPUP</span></span>
     </a>
 
-    <p>
-      © <span id="year"></span> NovaTopup. Top up cepat untuk para pemain.
-    </p>
+    <p>© <span id="year"></span> NovaTopup. Top up cepat untuk para pemain.</p>
   </footer>
 
   <div class="modal-backdrop" id="topupModal" aria-hidden="true">
@@ -414,11 +417,7 @@
           </label>
         </div>
 
-        <button
-          type="button"
-          class="check-id-button"
-          id="checkIdButton"
-        >
+        <button type="button" class="check-id-button" id="checkIdButton">
           <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
           <span>Cek ID Akun</span>
         </button>
@@ -574,32 +573,3 @@
           <span>Cek Status</span>
           <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
         </button>
-      </form>
-
-      <div
-        class="tracking-result"
-        id="trackingResult"
-        role="status"
-        aria-live="polite"
-        hidden
-      ></div>
-    </section>
-  </div>
-
-  <div
-    class="toast-container"
-    id="toastContainer"
-    aria-live="polite"
-    aria-atomic="true"
-  ></div>
-
-  <div class="loader-overlay" id="loaderOverlay" hidden>
-    <div class="loader-content" role="status" aria-live="polite">
-      <div class="loader-spinner" aria-hidden="true"></div>
-      <p id="loaderText">Memproses transaksi...</p>
-    </div>
-  </div>
-
-  <script src="./app.js"></script>
-</body>
-</html>
