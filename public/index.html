@@ -215,7 +215,237 @@
       </div>
     </section>
   </main>
+<section class="contact-section" id="kontak" aria-labelledby="contactTitle">
+  <div class="contact-heading reveal">
+    <span class="section-label">HUBUNGI KAMI</span>
+    <h2 id="contactTitle">Butuh bantuan? Hubungi Daulay Storee.</h2>
+    <p>Kami siap membantu pertanyaan mengenai produk dan proses top up game Anda.</p>
+  </div>
 
+  <div class="contact-grid">
+    <a class="contact-card reveal" href="https://www.instagram.com/daulaystoree/" target="_blank" rel="noopener noreferrer" aria-label="Kunjungi Instagram Daulay Storee">
+      <span class="contact-icon instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></span>
+      <span class="contact-info">
+        <span class="contact-label">Instagram</span>
+        <strong>@daulaystoree</strong>
+      </span>
+      <i class="fa-solid fa-arrow-up-right-from-square contact-arrow" aria-hidden="true"></i>
+    </a>
+
+    <a class="contact-card reveal" href="https://wa.me/6287777777777" target="_blank" rel="noopener noreferrer" aria-label="Chat WhatsApp Daulay Storee">
+      <span class="contact-icon whatsapp"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i></span>
+      <span class="contact-info">
+        <span class="contact-label">WhatsApp</span>
+        <strong>0877-7777-7777</strong>
+      </span>
+      <i class="fa-solid fa-arrow-up-right-from-square contact-arrow" aria-hidden="true"></i>
+    </a>
+
+    <a class="contact-card reveal" href="mailto:halo@daulaystore.my.id" aria-label="Kirim email ke Daulay Storee">
+      <span class="contact-icon email"><i class="fa-solid fa-envelope" aria-hidden="true"></i></span>
+      <span class="contact-info">
+        <span class="contact-label">Email</span>
+        <strong>halo@daulaystore.my.id</strong>
+      </span>
+      <i class="fa-solid fa-arrow-up-right-from-square contact-arrow" aria-hidden="true"></i>
+    </a>
+
+    <a class="contact-card contact-address reveal" href="https://www.google.com/maps/search/?api=1&query=Metland%20Transyogi%20Cluster%20Eboni%20Blob%20EB%2025%20No%2032%2C%20Cileungsi%20Kidul%2C%20Kabupaten%20Bogor%2C%20Indonesia" target="_blank" rel="noopener noreferrer" aria-label="Buka alamat Daulay Storee di peta">
+      <span class="contact-icon location"><i class="fa-solid fa-location-dot" aria-hidden="true"></i></span>
+      <span class="contact-info">
+        <span class="contact-label">Alamat</span>
+        <strong>Metland Transyogi Cluster Eboni Blob EB 25 No. 32</strong>
+        <small>Cileungsi Kidul, Kabupaten Bogor, Indonesia</small>
+      </span>
+      <i class="fa-solid fa-arrow-up-right-from-square contact-arrow" aria-hidden="true"></i>
+    </a>
+  </div>
+</section>
+
+<!--
+TAMBAHKAN CSS INI DI BAGIAN PALING BAWAH public/style.css
+-->
+<style>
+  .contact-section {
+    width: min(1160px, calc(100% - 40px));
+    margin: 0 auto;
+    padding: 0 0 72px;
+  }
+
+  .contact-heading {
+    max-width: 650px;
+    margin-bottom: 25px;
+  }
+
+  .contact-heading h2 {
+    margin: 9px 0 8px;
+    font-family: "Space Grotesk", sans-serif;
+    font-size: clamp(27px, 3vw, 38px);
+    letter-spacing: -1.6px;
+  }
+
+  .contact-heading p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+
+  .contact-card {
+    position: relative;
+    display: flex;
+    min-width: 0;
+    align-items: center;
+    gap: 15px;
+    overflow: hidden;
+    padding: 20px;
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    background: linear-gradient(145deg, rgba(96, 172, 231, .075), rgba(255, 255, 255, .015));
+    box-shadow: 0 12px 34px rgba(0, 0, 0, .22);
+    transition: transform .32s cubic-bezier(.22, 1, .36, 1), border-color .32s ease, background .32s ease, box-shadow .32s ease;
+  }
+
+  .contact-card::after {
+    position: absolute;
+    z-index: 0;
+    inset: 0;
+    content: "";
+    opacity: 0;
+    background: radial-gradient(circle at 12% 0%, rgba(82, 174, 255, .22), transparent 43%), radial-gradient(circle at 92% 100%, rgba(24, 108, 215, .16), transparent 35%);
+    transition: opacity .32s ease;
+    pointer-events: none;
+  }
+
+  .contact-card:hover {
+    border-color: rgba(96, 191, 255, .62);
+    background: rgba(30, 124, 215, .11);
+    box-shadow: 0 20px 48px rgba(0, 0, 0, .34), 0 0 30px rgba(16, 129, 237, .15);
+    transform: translateY(-6px);
+  }
+
+  .contact-card:hover::after {
+    opacity: 1;
+  }
+
+  .contact-icon,
+  .contact-info,
+  .contact-arrow {
+    position: relative;
+    z-index: 1;
+  }
+
+  .contact-icon {
+    display: grid;
+    flex: 0 0 48px;
+    width: 48px;
+    height: 48px;
+    place-items: center;
+    border-radius: 14px;
+    font-size: 21px;
+  }
+
+  .contact-icon.instagram {
+    color: #ffd4f0;
+    background: linear-gradient(135deg, rgba(220, 47, 141, .72), rgba(117, 48, 226, .76));
+  }
+
+  .contact-icon.whatsapp {
+    color: #c8ffe7;
+    background: rgba(37, 211, 102, .18);
+  }
+
+  .contact-icon.email {
+    color: #caeeff;
+    background: rgba(38, 163, 234, .2);
+  }
+
+  .contact-icon.location {
+    color: #ffe1b8;
+    background: rgba(255, 152, 57, .18);
+  }
+
+  .contact-info {
+    display: grid;
+    min-width: 0;
+    gap: 4px;
+  }
+
+  .contact-label {
+    color: #89abc2;
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.1px;
+    text-transform: uppercase;
+  }
+
+  .contact-info strong {
+    overflow: hidden;
+    color: #eaf7ff;
+    font-size: 15px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .contact-info small {
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.5;
+  }
+
+  .contact-address .contact-info strong,
+  .contact-address .contact-info small {
+    overflow: visible;
+    white-space: normal;
+  }
+
+  .contact-arrow {
+    margin-left: auto;
+    color: #8acdf8;
+    font-size: 13px;
+    transition: transform .25s ease, color .25s ease;
+  }
+
+  .contact-card:hover .contact-arrow {
+    color: #ffffff;
+    transform: translate(2px, -2px);
+  }
+
+  @media (max-width: 600px) {
+    .contact-section {
+      width: min(100% - 28px, 1160px);
+      padding-bottom: 48px;
+    }
+
+    .contact-grid {
+      grid-template-columns: 1fr;
+      gap: 11px;
+    }
+
+    .contact-card {
+      padding: 17px;
+    }
+
+    .contact-icon {
+      flex-basis: 43px;
+      width: 43px;
+      height: 43px;
+      border-radius: 12px;
+      font-size: 19px;
+    }
+
+    .contact-info strong {
+      font-size: 14px;
+    }
+  }
+</style>
   <footer>
     <a href="#" class="brand" aria-label="Daulay Storee beranda">
       <img class="brand-logo-animation" src="./iniaja.gif" alt="Daulay Storee" />
