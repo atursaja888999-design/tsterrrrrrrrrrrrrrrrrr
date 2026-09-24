@@ -14,6 +14,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="preload" href="./iniaja.gif" as="image" type="image/gif" />
+  <link rel="preload" href="./1.jpg" as="image" type="image/jpeg" />
 
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="id_ID" />
@@ -30,7 +31,7 @@
 
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
-  <link rel="stylesheet" href="./style.css?v=daulaystoree-20260925-gif" />
+  <link rel="stylesheet" href="./style.css?v=daulaystoree-20260925-banner" />
 
   <style>
     .api-game-cover { overflow: hidden; background: linear-gradient(135deg, #0b4eab, #07101f); }
@@ -38,92 +39,44 @@
     .api-game-cover > span { display: grid; width: 100%; height: 100%; place-items: center; font-weight: 800; font-size: 1.15rem; letter-spacing: .08em; }
     .game-loading { grid-column: 1 / -1; margin: 0; padding: 1.25rem; color: #c9eaff; text-align: center; }
 
-    /* Logo utama memakai iniaja.gif: besar, lebar, tanpa background. */
-    .brand {
-      display: inline-flex;
-      align-items: center;
-      flex: 0 0 auto;
-      width: min(420px, 64vw);
-      max-width: 420px;
-      overflow: visible;
-      background: transparent;
-      border: 0;
-      box-shadow: none;
-    }
+    .brand { display: inline-flex; align-items: center; flex: 0 0 auto; width: min(420px, 64vw); max-width: 420px; overflow: visible; background: transparent; border: 0; box-shadow: none; }
+    .brand-logo-animation { display: block; width: 100%; height: 76px; object-fit: contain; object-position: left center; background: transparent; border: 0; box-shadow: none; }
+    footer .brand { width: min(320px, 70vw); max-width: 320px; }
+    footer .brand-logo-animation { height: 60px; }
 
-    .brand-logo-animation {
-      display: block;
-      width: 100%;
-      height: 76px;
-      object-fit: contain;
-      object-position: left center;
-      background: transparent;
-      border: 0;
-      box-shadow: none;
-    }
+    .orb-core { overflow: hidden; }
+    .d-icon-gif { display: block; max-width: 100%; max-height: 100%; object-position: center; background: transparent; border: 0; box-shadow: none; }
+    .orb-core .d-icon-gif { width: 132%; height: 132%; max-width: none; max-height: none; object-fit: cover; object-position: center; border-radius: 50%; }
+    .step .d-icon-gif { width: 42px; height: 42px; margin-bottom: 2px; object-fit: contain; }
 
-    footer .brand {
-      width: min(320px, 70vw);
-      max-width: 320px;
-    }
+    .promo-banner { width: min(1160px, calc(100% - 40px)); margin: 6px auto 0; }
+    .banner-slider { position: relative; overflow: hidden; border: 1px solid rgba(104, 191, 255, .25); border-radius: 24px; background: #061221; box-shadow: 0 22px 54px rgba(0, 0, 0, .3); }
+    .banner-track { display: flex; transition: transform .65s cubic-bezier(.22, 1, .36, 1); will-change: transform; }
+    .banner-slide { flex: 0 0 100%; width: 100%; aspect-ratio: 4 / 1; background: linear-gradient(135deg, #063f86, #04101f); }
+    .banner-slide img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .banner-arrow { position: absolute; z-index: 2; top: 50%; display: grid; width: 42px; height: 42px; place-items: center; border: 1px solid rgba(196, 235, 255, .3); border-radius: 50%; color: #ecf8ff; background: rgba(3, 15, 30, .58); box-shadow: 0 8px 20px rgba(0, 0, 0, .25); transform: translateY(-50%); transition: background .2s ease, transform .2s ease; }
+    .banner-arrow:hover { background: rgba(13, 119, 213, .84); transform: translateY(-50%) scale(1.08); }
+    .banner-prev { left: 18px; }
+    .banner-next { right: 18px; }
+    .banner-dots { position: absolute; z-index: 2; right: 0; bottom: 13px; left: 0; display: flex; justify-content: center; gap: 8px; }
+    .banner-dot { width: 8px; height: 8px; padding: 0; border: 0; border-radius: 999px; background: rgba(235, 249, 255, .48); transition: width .25s ease, background .25s ease; }
+    .banner-dot.is-active { width: 26px; background: #fff; }
 
-    footer .brand-logo-animation {
-      height: 60px;
-    }
-
-    /* GIF huruf D, file: video.gif. Pengganti ikon gamepad. */
-    .d-icon-gif {
-      display: block;
-      width: 68px;
-      height: 68px;
-      max-width: 100%;
-      max-height: 100%;
-      object-fit: contain;
-      object-position: center;
-      background: transparent;
-      border: 0;
-      border-radius: 0;
-      box-shadow: none;
-    }
-
-    .step .d-icon-gif {
-      width: 42px;
-      height: 42px;
-      margin-bottom: 2px;
-    }
-
-    @media (max-width: 980px) {
-      .nav-menu { display: none; }
-    }
-
+    @media (max-width: 980px) { .nav-menu { display: none; } }
     @media (max-width: 600px) {
-      .brand {
-        width: min(265px, 64vw);
-        max-width: 265px;
-      }
-
-      .brand-logo-animation {
-        height: 54px;
-      }
-
-      footer .brand {
-        width: min(250px, 70vw);
-        max-width: 250px;
-      }
-
-      footer .brand-logo-animation {
-        height: 50px;
-      }
-
-      .d-icon-gif {
-        width: 57px;
-        height: 57px;
-      }
-
-      .step .d-icon-gif {
-        width: 38px;
-        height: 38px;
-      }
+      .brand { width: min(265px, 64vw); max-width: 265px; }
+      .brand-logo-animation { height: 54px; }
+      footer .brand { width: min(250px, 70vw); max-width: 250px; }
+      footer .brand-logo-animation { height: 50px; }
+      .orb-core .d-icon-gif { width: 132%; height: 132%; }
+      .step .d-icon-gif { width: 38px; height: 38px; }
+      .promo-banner { width: min(100% - 28px, 1160px); margin-top: 2px; }
+      .banner-slider { border-radius: 16px; }
+      .banner-slide { aspect-ratio: 16 / 7; }
+      .banner-arrow { width: 33px; height: 33px; font-size: 12px; }
+      .banner-prev { left: 9px; }
+      .banner-next { right: 9px; }
+      .banner-dots { bottom: 9px; }
     }
   </style>
 
@@ -171,6 +124,35 @@
       <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i><span>Lacak Pesanan</span>
     </button>
   </header>
+
+  <section class="promo-banner" aria-label="Promo Daulay Storee">
+    <div class="banner-slider" id="bannerSlider">
+      <div class="banner-track">
+        <article class="banner-slide is-active">
+          <img src="./1.jpg" alt="Promo Daulay Storee 1" />
+        </article>
+        <article class="banner-slide">
+          <img src="./2.jpg" alt="Promo Daulay Storee 2" loading="lazy" />
+        </article>
+        <article class="banner-slide">
+          <img src="./3.jpg" alt="Promo Daulay Storee 3" loading="lazy" />
+        </article>
+      </div>
+
+      <button class="banner-arrow banner-prev" type="button" aria-label="Banner sebelumnya">
+        <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+      </button>
+      <button class="banner-arrow banner-next" type="button" aria-label="Banner berikutnya">
+        <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+      </button>
+
+      <div class="banner-dots" aria-label="Pilih banner">
+        <button class="banner-dot is-active" type="button" aria-label="Tampilkan banner 1" aria-current="true"></button>
+        <button class="banner-dot" type="button" aria-label="Tampilkan banner 2"></button>
+        <button class="banner-dot" type="button" aria-label="Tampilkan banner 3"></button>
+      </div>
+    </div>
+  </section>
 
   <main>
     <section class="hero" aria-labelledby="heroTitle">
@@ -250,8 +232,8 @@
         <input type="hidden" id="selectedProductCode" />
         <div class="form-step"><span class="form-step-number">1</span><div><h3>Masukkan data akun</h3><p>Pastikan User ID dan Zone/Server ID sudah benar.</p></div></div>
         <div class="input-grid">
-<label>User ID<input id="userId" type="text" inputmode="text" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="Contoh: 123456789 atau nama_akun" required /></label>
-<label id="zoneGroup">Zone / Server ID<input id="zoneId" type="text" inputmode="text" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="Contoh: 1234" /></label>
+          <label>User ID<input id="userId" type="text" inputmode="text" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="Contoh: 123456789 atau nama_akun" required /></label>
+          <label id="zoneGroup">Zone / Server ID<input id="zoneId" type="text" inputmode="text" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="Contoh: 1234" /></label>
         </div>
         <button type="button" class="check-id-button" id="checkIdButton"><i class="fa-solid fa-circle-check" aria-hidden="true"></i><span>Cek ID Akun</span></button>
         <div class="account-result" id="accountResult" role="status" aria-live="polite" hidden></div>
@@ -454,6 +436,55 @@
       result.hidden = false;
       result.textContent = "Pelacakan pesanan belum tersedia karena pembayaran otomatis belum diaktifkan.";
     });
+
+    const bannerSlider = document.getElementById("bannerSlider");
+    if (bannerSlider) {
+      const bannerTrack = bannerSlider.querySelector(".banner-track");
+      const bannerSlides = Array.from(bannerSlider.querySelectorAll(".banner-slide"));
+      const bannerDots = Array.from(bannerSlider.querySelectorAll(".banner-dot"));
+      const bannerPrevious = bannerSlider.querySelector(".banner-prev");
+      const bannerNext = bannerSlider.querySelector(".banner-next");
+      let currentBanner = 0;
+      let bannerTimer;
+
+      function showBanner(index) {
+        currentBanner = (index + bannerSlides.length) % bannerSlides.length;
+        bannerTrack.style.transform = `translateX(-${currentBanner * 100}%)`;
+        bannerSlides.forEach((slide, slideIndex) => slide.classList.toggle("is-active", slideIndex === currentBanner));
+        bannerDots.forEach((dot, dotIndex) => {
+          const active = dotIndex === currentBanner;
+          dot.classList.toggle("is-active", active);
+          dot.setAttribute("aria-current", active ? "true" : "false");
+        });
+      }
+
+      function startBannerTimer() {
+        window.clearInterval(bannerTimer);
+        bannerTimer = window.setInterval(() => showBanner(currentBanner + 1), 8000);
+      }
+
+      bannerPrevious.addEventListener("click", () => {
+        showBanner(currentBanner - 1);
+        startBannerTimer();
+      });
+
+      bannerNext.addEventListener("click", () => {
+        showBanner(currentBanner + 1);
+        startBannerTimer();
+      });
+
+      bannerDots.forEach((dot, index) => dot.addEventListener("click", () => {
+        showBanner(index);
+        startBannerTimer();
+      }));
+
+      bannerSlider.addEventListener("mouseenter", () => window.clearInterval(bannerTimer));
+      bannerSlider.addEventListener("mouseleave", startBannerTimer);
+      bannerSlider.addEventListener("focusin", () => window.clearInterval(bannerTimer));
+      bannerSlider.addEventListener("focusout", startBannerTimer);
+      startBannerTimer();
+    }
+
     document.getElementById("year").textContent = new Date().getFullYear();
     loadGames();
   </script>
