@@ -1231,12 +1231,18 @@ input:focus {
   animation: rotate 0.9s linear infinite;
 }
 
+/* Fallback: konten selalu terlihat walaupun app.js gagal dimuat */
 .reveal {
-  opacity: 0;
-  transform: translateY(20px);
+  opacity: 1;
+  transform: translateY(0);
   transition: opacity 0.65s ease, transform 0.65s ease;
 }
 
+/* Animasi tetap dapat dipakai jika app.js menambahkan class ini */
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
 .reveal.visible {
   opacity: 1;
   transform: translateY(0);
