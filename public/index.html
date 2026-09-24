@@ -1,206 +1,492 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="id">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#0b63f6" />
-  <title>Daulay Storee — Top Up Game Cepat</title>
+  <meta name="description" content="Daulay Storee menyediakan top up game murah, cepat, dan aman. Beli diamond Mobile Legends, Free Fire, PUBG Mobile, Valorant, Genshin Impact, dan game favorit lainnya dengan proses praktis." />
+  <meta name="keywords" content="Daulay Storee, daulaystoree, top up murah, top up cepat, top up game murah, diamond murah, beli diamond murah, top up Mobile Legends murah, diamond Mobile Legends murah, top up Free Fire murah, diamond Free Fire murah, top up PUBG Mobile, UC PUBG murah, top up Valorant, Valorant Points murah, top up Genshin Impact, top up game Indonesia" />
+  <meta name="author" content="Daulay Storee" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <meta name="theme-color" content="#03070e" />
+  <meta name="google-site-verification" content="k4ZG5AmmZJOCP3cudhR5QWc1s9cAlXwAjIRSp7LXv74" />
+
+  <link rel="canonical" href="https://daulaystore.my.id/" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" href="./iniaja.gif" as="image" type="image/gif" />
+  <link rel="preload" href="./1.jpg" as="image" type="image/jpeg" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="id_ID" />
+  <meta property="og:site_name" content="Daulay Storee" />
+  <meta property="og:title" content="Daulay Storee — Top Up Game Murah, Cepat & Aman" />
+  <meta property="og:description" content="Top up game murah dan cepat untuk Mobile Legends, Free Fire, PUBG Mobile, Valorant, Genshin Impact, dan game favorit lainnya." />
+  <meta property="og:url" content="https://daulaystore.my.id/" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Daulay Storee — Top Up Game Murah, Cepat & Aman" />
+  <meta name="twitter:description" content="Top up game murah dan cepat untuk game favorit Anda." />
+
+  <title>Daulay Storee — Top Up Game Murah, Cepat & Aman</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+  <link rel="stylesheet" href="./style.css?v=daulaystoree-20260925-banner" />
+
   <style>
-    :root {
-      --blue: #1267ff;
-      --blue-dark: #0846bd;
-      --navy: #071937;
-      --ink: #13233f;
-      --muted: #65718a;
-      --line: #e7ecf5;
-      --soft: #f5f8ff;
-      --white: #ffffff;
-      --success: #14a66a;
-      --shadow: 0 16px 42px rgba(17, 54, 113, .12);
-      --radius: 22px;
+    .api-game-cover { overflow: hidden; background: linear-gradient(135deg, #0b4eab, #07101f); }
+    .api-game-cover img { width: 100%; height: 100%; display: block; object-fit: cover; }
+    .api-game-cover > span { display: grid; width: 100%; height: 100%; place-items: center; font-weight: 800; font-size: 1.15rem; letter-spacing: .08em; }
+    .game-loading { grid-column: 1 / -1; margin: 0; padding: 1.25rem; color: #c9eaff; text-align: center; }
+
+    .brand { display: inline-flex; align-items: center; flex: 0 0 auto; width: min(420px, 64vw); max-width: 420px; overflow: visible; background: transparent; border: 0; box-shadow: none; }
+    .brand-logo-animation { display: block; width: 100%; height: 76px; object-fit: contain; object-position: left center; background: transparent; border: 0; box-shadow: none; }
+    footer .brand { width: min(320px, 70vw); max-width: 320px; }
+    footer .brand-logo-animation { height: 60px; }
+
+    .orb-core { overflow: hidden; }
+    .d-icon-gif { display: block; max-width: 100%; max-height: 100%; object-position: center; background: transparent; border: 0; box-shadow: none; }
+    .orb-core .d-icon-gif { width: 132%; height: 132%; max-width: none; max-height: none; object-fit: cover; object-position: center; border-radius: 50%; }
+    .step .d-icon-gif { width: 42px; height: 42px; margin-bottom: 2px; object-fit: contain; }
+
+    .promo-banner { width: min(1160px, calc(100% - 40px)); margin: 6px auto 0; }
+    .banner-slider { position: relative; overflow: hidden; border: 1px solid rgba(104, 191, 255, .25); border-radius: 24px; background: #061221; box-shadow: 0 22px 54px rgba(0, 0, 0, .3); }
+    .banner-track { display: flex; transition: transform .65s cubic-bezier(.22, 1, .36, 1); will-change: transform; }
+    .banner-slide { flex: 0 0 100%; width: 100%; aspect-ratio: 4 / 1; background: linear-gradient(135deg, #063f86, #04101f); }
+    .banner-slide img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .banner-arrow { position: absolute; z-index: 2; top: 50%; display: grid; width: 42px; height: 42px; place-items: center; border: 1px solid rgba(196, 235, 255, .3); border-radius: 50%; color: #ecf8ff; background: rgba(3, 15, 30, .58); box-shadow: 0 8px 20px rgba(0, 0, 0, .25); transform: translateY(-50%); transition: background .2s ease, transform .2s ease; }
+    .banner-arrow:hover { background: rgba(13, 119, 213, .84); transform: translateY(-50%) scale(1.08); }
+    .banner-prev { left: 18px; }
+    .banner-next { right: 18px; }
+    .banner-dots { position: absolute; z-index: 2; right: 0; bottom: 13px; left: 0; display: flex; justify-content: center; gap: 8px; }
+    .banner-dot { width: 8px; height: 8px; padding: 0; border: 0; border-radius: 999px; background: rgba(235, 249, 255, .48); transition: width .25s ease, background .25s ease; }
+    .banner-dot.is-active { width: 26px; background: #fff; }
+
+    @media (max-width: 980px) { .nav-menu { display: none; } }
+    @media (max-width: 600px) {
+      .brand { width: min(265px, 64vw); max-width: 265px; }
+      .brand-logo-animation { height: 54px; }
+      footer .brand { width: min(250px, 70vw); max-width: 250px; }
+      footer .brand-logo-animation { height: 50px; }
+      .orb-core .d-icon-gif { width: 132%; height: 132%; }
+      .step .d-icon-gif { width: 38px; height: 38px; }
+      .promo-banner { width: min(100% - 28px, 1160px); margin-top: 2px; }
+      .banner-slider { border-radius: 16px; }
+      .banner-slide { aspect-ratio: 16 / 7; }
+      .banner-arrow { width: 33px; height: 33px; font-size: 12px; }
+      .banner-prev { left: 9px; }
+      .banner-next { right: 9px; }
+      .banner-dots { bottom: 9px; }
     }
-
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      color: var(--ink);
-      background: #f8faff;
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    }
-    button, input, select { font: inherit; }
-    button { cursor: pointer; }
-    a { color: inherit; text-decoration: none; }
-
-    .container { width: min(1160px, calc(100% - 32px)); margin: 0 auto; }
-    .topbar { background: var(--navy); color: #dce8ff; font-size: 13px; }
-    .topbar .container { min-height: 38px; display: flex; justify-content: space-between; align-items: center; gap: 16px; }
-    .topbar strong { color: #fff; }
-
-    header {
-      position: sticky; top: 0; z-index: 20;
-      background: rgba(255,255,255,.92); backdrop-filter: blur(14px);
-      border-bottom: 1px solid rgba(224,231,244,.8);
-    }
-    .navbar { height: 74px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
-    .brand { display: flex; align-items: center; gap: 10px; font-weight: 850; letter-spacing: -.7px; font-size: 21px; }
-    .brand-mark {
-      width: 38px; height: 38px; border-radius: 13px; display: grid; place-items: center;
-      color: #fff; background: linear-gradient(145deg, #2581ff, #0643c2); box-shadow: 0 9px 18px rgba(18,103,255,.28);
-      font-size: 20px;
-    }
-    .brand span { color: var(--blue); }
-    nav { display: flex; align-items: center; gap: 23px; color: #4c5b75; font-weight: 650; font-size: 14px; }
-    nav a:hover { color: var(--blue); }
-    .nav-action, .primary-btn {
-      border: 0; border-radius: 12px; padding: 12px 17px; color: #fff; font-weight: 750;
-      background: var(--blue); box-shadow: 0 10px 21px rgba(18,103,255,.21); transition: .2s ease;
-    }
-    .nav-action:hover, .primary-btn:hover { transform: translateY(-2px); background: var(--blue-dark); }
-    .menu { display: none; background: transparent; border: 0; font-size: 23px; color: var(--navy); }
-
-    .hero { padding: 48px 0 24px; }
-    .hero-card {
-      position: relative; overflow: hidden; isolation: isolate; min-height: 370px; border-radius: 30px;
-      padding: 52px; color: #fff; background: linear-gradient(122deg, #06183d 0%, #0a3c9e 52%, #1377ff 100%); box-shadow: var(--shadow);
-    }
-    .hero-card::before, .hero-card::after { content: ""; position: absolute; z-index: -1; border-radius: 50%; filter: blur(1px); }
-    .hero-card::before { width: 440px; height: 440px; background: rgba(82,168,255,.23); right: -120px; top: -170px; }
-    .hero-card::after { width: 300px; height: 300px; border: 48px solid rgba(255,255,255,.08); right: 15%; bottom: -180px; }
-    .eyebrow { display: inline-flex; align-items: center; gap: 7px; padding: 8px 11px; border: 1px solid rgba(255,255,255,.19); border-radius: 999px; background: rgba(255,255,255,.1); font-size: 12px; font-weight: 750; }
-    .hero h1 { max-width: 660px; margin: 19px 0 12px; font-size: clamp(34px, 5vw, 58px); line-height: 1.04; letter-spacing: -2px; }
-    .hero p { max-width: 535px; margin: 0; color: #d7e7ff; line-height: 1.7; font-size: 16px; }
-    .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 28px; }
-    .hero .primary-btn { background: #fff; color: #0750d1; box-shadow: none; }
-    .hero .primary-btn:hover { background: #eaf2ff; }
-    .ghost-btn { border: 1px solid rgba(255,255,255,.35); border-radius: 12px; padding: 12px 17px; color: #fff; background: rgba(255,255,255,.07); font-weight: 750; }
-    .hero-stat { position: absolute; right: 50px; bottom: 36px; display: flex; gap: 10px; }
-    .stat { min-width: 112px; padding: 14px; border: 1px solid rgba(255,255,255,.18); border-radius: 15px; background: rgba(4,28,83,.28); backdrop-filter: blur(8px); }
-    .stat b { display:block; font-size: 17px; }.stat small { color: #bed6ff; font-size: 11px; }
-
-    .perks { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin: 23px 0 58px; }
-    .perk { display: flex; align-items: center; gap: 12px; padding: 16px; border: 1px solid var(--line); border-radius: 17px; background: #fff; }
-    .perk-icon { width: 40px; height: 40px; display: grid; place-items: center; border-radius: 13px; background: #eaf2ff; font-size: 19px; }
-    .perk b { font-size: 14px; }.perk span { display: block; margin-top: 3px; color: var(--muted); font-size: 12px; }
-
-    section { padding: 12px 0 65px; }
-    .section-head { display:flex; justify-content:space-between; align-items:end; gap: 20px; margin-bottom: 21px; }
-    .section-kicker { margin:0 0 5px; color: var(--blue); font-weight:800; font-size:12px; text-transform:uppercase; letter-spacing:1.1px; }
-    h2 { margin:0; color: var(--navy); font-size: clamp(25px, 3vw, 33px); letter-spacing:-1px; }
-    .section-head > p { max-width: 460px; margin:0; color:var(--muted); line-height:1.6; font-size:14px; }
-
-    .filters { display:flex; gap: 9px; flex-wrap:wrap; margin-bottom:20px; }
-    .filter { border: 1px solid var(--line); padding: 9px 14px; border-radius:999px; background:#fff; color:#536079; font-weight:700; font-size:13px; }
-    .filter.active, .filter:hover { color:#fff; border-color:var(--blue); background:var(--blue); }
-    .games { display:grid; grid-template-columns:repeat(4, 1fr); gap:17px; }
-    .game-card { overflow:hidden; border:1px solid var(--line); border-radius:19px; background:#fff; box-shadow: 0 5px 15px rgba(27,59,112,.04); transition:.22s ease; }
-    .game-card:hover { transform: translateY(-5px); box-shadow: var(--shadow); border-color:#d3e0fb; }
-    .game-art { height:148px; display:flex; align-items:end; padding:15px; color:#fff; position:relative; overflow:hidden; }
-    .game-art::before { content:""; position:absolute; width:145px; height:145px; right:-36px; top:-36px; border-radius:50%; background:rgba(255,255,255,.18); }
-    .game-art::after { content:""; position:absolute; width:110px; height:110px; left:-34px; bottom:-70px; border:20px solid rgba(255,255,255,.16); border-radius:50%; }
-    .game-art strong { position:relative; z-index:1; max-width:150px; font-size:20px; line-height:1; letter-spacing:-.7px; }
-    .ml { background:linear-gradient(135deg,#133db6,#50a5ff); }.ff { background:linear-gradient(135deg,#f04f26,#fbb21b); }.pubg { background:linear-gradient(135deg,#253549,#60788e); }.genshin { background:linear-gradient(135deg,#554bc9,#dc8df1); }.valorant { background:linear-gradient(135deg,#e64c5e,#962e46); }.hok { background:linear-gradient(135deg,#0066bc,#00bed2); }.cod { background:linear-gradient(135deg,#1c342a,#61a355); }.roblox { background:linear-gradient(135deg,#32363d,#8b94a4); }
-    .game-info { padding:14px; }.game-info h3 { margin:0 0 5px; font-size:15px; }.game-info p { margin:0; color:var(--muted); font-size:12px; }
-    .game-footer { display:flex; justify-content:space-between; align-items:center; margin-top:14px; }.from { color:var(--blue); font-size:12px; font-weight:800; }.buy { border:0; width:31px; height:31px; border-radius:10px; color:#fff; background:var(--blue); font-size:18px; line-height:1; }
-
-    .process { display:grid; grid-template-columns: 1.2fr .8fr; gap:24px; align-items:stretch; }
-    .process-panel, .support-panel { padding:30px; border-radius:25px; }
-    .process-panel { color:#fff; background:var(--navy); }.process-panel h2 { color:#fff; }.process-panel > p { color:#bbcff5; line-height:1.65; font-size:14px; }
-    .steps { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin-top:24px; }.step { padding:15px; border-radius:15px; background:rgba(255,255,255,.08); }.step-no { display:grid; place-items:center; width:28px; height:28px; border-radius:9px; background:#1c72fa; font-weight:800; font-size:13px; }.step b { display:block; margin:12px 0 5px; font-size:14px; }.step span { color:#bdccea; font-size:12px; line-height:1.4; }
-    .support-panel { border:1px solid #dce7f9; background:linear-gradient(145deg,#eff6ff,#fff); }.support-panel h3 { margin:0 0 9px; color:var(--navy); font-size:23px; letter-spacing:-.7px; }.support-panel p { color:var(--muted); line-height:1.65; font-size:14px; }.support-list { margin:23px 0; padding:0; list-style:none; }.support-list li { padding:9px 0; border-bottom:1px solid #e2eaf7; color:#4e5e78; font-size:13px; }.support-list li::before { content:"✓"; margin-right:9px; color:var(--success); font-weight:900; }
-
-    footer { padding: 35px 0; color:#aab8d1; background:#06162f; }.footer-grid { display:flex; justify-content:space-between; gap:22px; align-items:center; }.footer-grid .brand { color:#fff; }.footer-grid p { margin:8px 0 0; font-size:13px; }.footer-links { display:flex; gap:17px; font-size:13px; }.footer-links a:hover { color:#fff; }
-
-    .modal { position:fixed; inset:0; z-index:50; display:none; align-items:center; justify-content:center; padding:18px; background:rgba(2,13,34,.63); }.modal.open { display:flex; }.modal-card { width:min(540px,100%); max-height:92vh; overflow:auto; border-radius:23px; background:#fff; box-shadow:0 30px 80px rgba(0,0,0,.35); }.modal-top { display:flex; justify-content:space-between; align-items:center; padding:20px 22px; border-bottom:1px solid var(--line); }.modal-top h3 { margin:0; color:var(--navy); }.close { width:34px; height:34px; border:0; border-radius:10px; background:#f0f4fa; color:#51617b; font-size:20px; }.modal-body { padding:22px; }.selected-game { padding:15px; border-radius:15px; color:#fff; background:linear-gradient(120deg,#0d50cd,#2087ff); font-weight:800; }.form-grid { display:grid; grid-template-columns:1fr 1fr; gap:13px; margin-top:17px; }.field { display:flex; flex-direction:column; gap:7px; }.field.full { grid-column:1/-1; }.field label { color:#43516a; font-size:12px; font-weight:750; }.field input, .field select { width:100%; padding:12px; border:1px solid #dce4f1; border-radius:11px; outline:none; color:#25334d; background:#fff; }.field input:focus, .field select:focus { border-color:var(--blue); box-shadow:0 0 0 3px rgba(18,103,255,.12); }.checkout { width:100%; margin-top:20px; border:0; border-radius:12px; padding:14px; color:#fff; background:var(--blue); font-weight:800; }.notice { display:none; margin-top:13px; padding:12px; border-radius:11px; color:#08734a; background:#e6fbf1; font-size:13px; }
-
-    @media (max-width: 850px) { .games { grid-template-columns:repeat(3,1fr); }.hero-card { padding:40px; }.hero-stat { display:none; }.process { grid-template-columns:1fr; } }
-    @media (max-width: 650px) { .topbar .container span:last-child { display:none; }.navbar { height:64px; }.menu { display:block; } nav { display:none; position:absolute; top:64px; left:0; right:0; padding:18px 16px; flex-direction:column; align-items:stretch; background:#fff; border-bottom:1px solid var(--line); }.navbar.open nav { display:flex; }.nav-action { text-align:left; }.hero { padding-top:26px; }.hero-card { min-height:335px; padding:30px 24px; border-radius:23px; }.hero h1 { letter-spacing:-1.5px; }.perks { grid-template-columns:1fr; margin-bottom:43px; }.section-head { align-items:start; flex-direction:column; }.games { grid-template-columns:repeat(2,1fr); gap:12px; }.game-art { height:125px; }.game-art strong { font-size:17px; }.process-panel, .support-panel { padding:23px; }.steps { grid-template-columns:1fr; }.footer-grid { align-items:start; flex-direction:column; }.form-grid { grid-template-columns:1fr; }.field.full { grid-column:auto; } }
   </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Daulay Storee",
+    "url": "https://daulaystore.my.id/",
+    "description": "Platform top up game murah, cepat, dan aman untuk pemain Indonesia.",
+    "inLanguage": "id-ID"
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Daulay Storee",
+    "url": "https://daulaystore.my.id/",
+    "description": "Layanan top up game murah dan cepat.",
+    "logo": "https://daulaystore.my.id/iniaja.gif"
+  }
+  </script>
 </head>
+
 <body>
-  <div class="topbar"><div class="container"><span>⚡ Top up otomatis, aman, dan cepat</span><span><strong>Daulay Storee</strong> • Layanan setiap hari</span></div></div>
-  <header>
-    <div class="container navbar" id="navbar">
-      <a class="brand" href="#beranda"><span class="brand-mark">D</span>Daulay <span>Storee</span></a>
-      <button class="menu" id="menuBtn" aria-label="Buka menu">☰</button>
-      <nav>
-        <a href="#beranda">Beranda</a><a href="#game">Top Up Game</a><a href="#cara">Cara Top Up</a><a href="#bantuan">Bantuan</a>
-        <button class="nav-action" data-open="Mobile Legends">Top Up Sekarang</button>
-      </nav>
-    </div>
+  <div class="noise" aria-hidden="true"></div>
+  <div class="orb orb-one" aria-hidden="true"></div>
+  <div class="orb orb-two" aria-hidden="true"></div>
+  <div class="orb orb-three" aria-hidden="true"></div>
+
+  <header class="navbar">
+    <a href="#" class="brand" aria-label="Daulay Storee beranda">
+      <img class="brand-logo-animation" src="./iniaja.gif" alt="Daulay Storee" />
+    </a>
+
+    <nav class="nav-menu" aria-label="Navigasi utama">
+      <a href="#games">Game</a>
+      <a href="#cara-order">Cara Order</a>
+      <a href="#keunggulan">Keunggulan</a>
+    </nav>
+
+    <button class="nav-cta" id="openTrackButton" type="button">
+      <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i><span>Lacak Pesanan</span>
+    </button>
   </header>
 
+  <section class="promo-banner" aria-label="Promo Daulay Storee">
+    <div class="banner-slider" id="bannerSlider">
+      <div class="banner-track">
+        <article class="banner-slide is-active">
+          <img src="./1.jpg" alt="Promo Daulay Storee 1" />
+        </article>
+        <article class="banner-slide">
+          <img src="./2.jpg" alt="Promo Daulay Storee 2" loading="lazy" />
+        </article>
+        <article class="banner-slide">
+          <img src="./3.jpg" alt="Promo Daulay Storee 3" loading="lazy" />
+        </article>
+      </div>
+
+      <button class="banner-arrow banner-prev" type="button" aria-label="Banner sebelumnya">
+        <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+      </button>
+      <button class="banner-arrow banner-next" type="button" aria-label="Banner berikutnya">
+        <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+      </button>
+
+      <div class="banner-dots" aria-label="Pilih banner">
+        <button class="banner-dot is-active" type="button" aria-label="Tampilkan banner 1" aria-current="true"></button>
+        <button class="banner-dot" type="button" aria-label="Tampilkan banner 2"></button>
+        <button class="banner-dot" type="button" aria-label="Tampilkan banner 3"></button>
+      </div>
+    </div>
+  </section>
+
   <main>
-    <section class="hero" id="beranda"><div class="container">
-      <div class="hero-card">
-        <span class="eyebrow">✦ TOP UP GAME TERPERCAYA</span>
-        <h1>Diam di rank itu pilihan. Naik rank, mulai dari sini.</h1>
-        <p>Isi diamond, UC, dan voucher game favorit Anda dalam hitungan menit. Proses praktis tanpa login akun dan pilihan pembayaran lengkap.</p>
-        <div class="hero-actions"><a class="primary-btn" href="#game">Pilih Game</a><a class="ghost-btn" href="#cara">Lihat Cara Top Up</a></div>
-        <div class="hero-stat"><div class="stat"><b>10K+</b><small>Transaksi sukses</small></div><div class="stat"><b>24/7</b><small>Layanan tersedia</small></div></div>
+    <section class="hero" aria-labelledby="heroTitle">
+      <div class="hero-copy reveal">
+        <div class="eyebrow"><span class="pulse-dot" aria-hidden="true"></span>Top up game murah & cepat 24/7</div>
+        <h1 id="heroTitle">Top Up Game Murah,<span>Proses Cepat & Aman.</span></h1>
+        <p>Daulay Storee menyediakan top up game murah untuk game favoritmu. Pilih produk, masukkan ID akun, lalu cek akun tujuan secara praktis dan aman.</p>
+        <div class="hero-actions">
+          <a href="#games" class="button button-primary"><span>Top Up Sekarang</span><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+          <button class="button button-ghost" id="heroTrackButton" type="button"><i class="fa-solid fa-clock-rotate-left" aria-hidden="true"></i><span>Cek Transaksi</span></button>
+        </div>
+        <div class="hero-stats" aria-label="Keunggulan Daulay Storee">
+          <div><strong>24/7</strong><span>Siap melayani</span></div>
+          <div><strong>Murah</strong><span>Harga kompetitif</span></div>
+          <div><strong>Aman</strong><span>Validasi akun</span></div>
+        </div>
       </div>
-      <div class="perks">
-        <div class="perk"><div class="perk-icon">⚡</div><div><b>Proses Instan</b><span>Pesanan dikirim otomatis</span></div></div>
-        <div class="perk"><div class="perk-icon">🛡️</div><div><b>Aman & Terpercaya</b><span>Data akun tetap terlindungi</span></div></div>
-        <div class="perk"><div class="perk-icon">💬</div><div><b>Customer Support</b><span>Siap membantu setiap hari</span></div></div>
-      </div>
-    </div></section>
 
-    <section id="game"><div class="container">
-      <div class="section-head"><div><p class="section-kicker">Katalog pilihan</p><h2>Top up game favoritmu</h2></div><p>Pilih game, masukkan ID pemain, tentukan nominal, lalu selesaikan pembayaran dengan mudah.</p></div>
-      <div class="filters" id="filters"><button class="filter active" data-filter="all">Semua Game</button><button class="filter" data-filter="moba">MOBA</button><button class="filter" data-filter="battle">Battle Royale</button><button class="filter" data-filter="rpg">RPG</button><button class="filter" data-filter="fps">FPS</button></div>
-      <div class="games" id="gameGrid">
-        <article class="game-card" data-category="moba"><div class="game-art ml"><strong>Mobile Legends</strong></div><div class="game-info"><h3>Mobile Legends</h3><p>Diamond MLBB</p><div class="game-footer"><span class="from">Mulai Rp3.000</span><button class="buy" data-open="Mobile Legends">+</button></div></div></article>
-        <article class="game-card" data-category="battle"><div class="game-art ff"><strong>Free Fire</strong></div><div class="game-info"><h3>Free Fire</h3><p>Diamond Free Fire</p><div class="game-footer"><span class="from">Mulai Rp1.000</span><button class="buy" data-open="Free Fire">+</button></div></div></article>
-        <article class="game-card" data-category="battle"><div class="game-art pubg"><strong>PUBG Mobile</strong></div><div class="game-info"><h3>PUBG Mobile</h3><p>UC PUBG Mobile</p><div class="game-footer"><span class="from">Mulai Rp15.000</span><button class="buy" data-open="PUBG Mobile">+</button></div></div></article>
-        <article class="game-card" data-category="rpg"><div class="game-art genshin"><strong>Genshin Impact</strong></div><div class="game-info"><h3>Genshin Impact</h3><p>Genesis Crystal</p><div class="game-footer"><span class="from">Mulai Rp16.000</span><button class="buy" data-open="Genshin Impact">+</button></div></div></article>
-        <article class="game-card" data-category="fps"><div class="game-art valorant"><strong>VALORANT</strong></div><div class="game-info"><h3>VALORANT</h3><p>Valorant Points</p><div class="game-footer"><span class="from">Mulai Rp15.000</span><button class="buy" data-open="VALORANT">+</button></div></div></article>
-        <article class="game-card" data-category="moba"><div class="game-art hok"><strong>Honor of Kings</strong></div><div class="game-info"><h3>Honor of Kings</h3><p>Tokens HoK</p><div class="game-footer"><span class="from">Mulai Rp5.000</span><button class="buy" data-open="Honor of Kings">+</button></div></div></article>
-        <article class="game-card" data-category="fps"><div class="game-art cod"><strong>Call of Duty Mobile</strong></div><div class="game-info"><h3>Call of Duty Mobile</h3><p>CP Call of Duty</p><div class="game-footer"><span class="from">Mulai Rp10.000</span><button class="buy" data-open="Call of Duty Mobile">+</button></div></div></article>
-        <article class="game-card" data-category="rpg"><div class="game-art roblox"><strong>Roblox</strong></div><div class="game-info"><h3>Roblox</h3><p>Robux</p><div class="game-footer"><span class="from">Mulai Rp15.000</span><button class="buy" data-open="Roblox">+</button></div></div></article>
+      <div class="hero-visual reveal" aria-hidden="true">
+        <div class="hero-grid"></div>
+        <div class="floating-chip chip-one"><i class="fa-solid fa-gem"></i><span>Diamond Murah</span></div>
+        <div class="floating-chip chip-two"><i class="fa-solid fa-shield-halved"></i><span>Top Up Aman</span></div>
+        <div class="game-orb">
+          <div class="orb-ring ring-one"></div>
+          <div class="orb-ring ring-two"></div>
+          <div class="orb-core">
+            <img class="d-icon-gif" src="./video.gif" alt="Daulay Storee" />
+          </div>
+        </div>
+        <div class="energy-line line-one"></div>
+        <div class="energy-line line-two"></div>
+        <div class="flame-field"><span class="flame"></span><span class="flame"></span><span class="flame"></span><span class="flame"></span><span class="flame"></span><span class="flame"></span><span class="flame"></span></div>
       </div>
-    </div></section>
+    </section>
 
-    <section id="cara"><div class="container"><div class="process">
-      <div class="process-panel"><p class="section-kicker" style="color:#72adff">Sangat mudah</p><h2>Top up hanya dalam 3 langkah</h2><p>Anda tidak perlu memberikan password. Cukup gunakan ID pemain yang benar agar pesanan dapat diproses.</p><div class="steps"><div class="step"><div class="step-no">01</div><b>Pilih game</b><span>Tentukan game dan produk yang ingin dibeli.</span></div><div class="step"><div class="step-no">02</div><b>Isi data</b><span>Masukkan User ID dan server bila diperlukan.</span></div><div class="step"><div class="step-no">03</div><b>Bayar</b><span>Pilih metode pembayaran dan tunggu pesanan masuk.</span></div></div></div>
-      <div class="support-panel" id="bantuan"><h3>Butuh bantuan?</h3><p>Tim Daulay Storee membantu jika ada kendala pesanan atau kesalahan data sebelum transaksi diproses.</p><ul class="support-list"><li>Cek ulang User ID sebelum membayar</li><li>Simpan bukti transaksi Anda</li><li>Hubungi admin jika pesanan tertunda</li></ul><button class="primary-btn" data-open="Mobile Legends">Mulai Top Up</button></div>
-    </div></div></section>
+    <section class="games-section" id="games" aria-labelledby="gamesTitle">
+      <div class="section-heading reveal">
+        <div>
+          <span class="section-label">TOP UP GAME MURAH</span>
+          <h2 id="gamesTitle">Pilih game favorit dan top up dalam hitungan detik.</h2>
+        </div>
+        <div class="search-box"><i class="fa-solid fa-search" aria-hidden="true"></i><input type="search" id="gameSearch" placeholder="Cari game..." autocomplete="off" aria-label="Cari game" /></div>
+      </div>
+      <div class="game-grid" id="gameGrid"><p class="game-loading">Memuat katalog game UniPlay...</p></div>
+      <p id="emptySearch" class="empty-search" hidden>Game tidak ditemukan. Coba kata kunci lain.</p>
+    </section>
+
+    <section class="features-section" id="keunggulan" aria-label="Keunggulan Daulay Storee">
+      <article class="feature-card reveal"><div class="feature-icon violet" aria-hidden="true"><i class="fa-solid fa-tags"></i></div><h3>Top Up Harga Murah</h3><p>Dapatkan pilihan nominal game dengan harga kompetitif untuk kebutuhan top up Anda.</p></article>
+      <article class="feature-card reveal"><div class="feature-icon pink" aria-hidden="true"><i class="fa-solid fa-bolt"></i></div><h3>Top Up Cepat</h3><p>Katalog game dan nominal dimuat langsung agar proses pemilihan produk lebih praktis.</p></article>
+      <article class="feature-card reveal"><div class="feature-icon cyan" aria-hidden="true"><i class="fa-solid fa-shield-halved"></i></div><h3>Validasi Akun Aman</h3><p>Periksa akun tujuan sebelum transaksi dilanjutkan agar data top up lebih tepat.</p></article>
+    </section>
+
+    <section class="steps-section" id="cara-order" aria-labelledby="stepsTitle">
+      <div class="section-heading reveal"><div><span class="section-label">CARA TOP UP</span><h2 id="stepsTitle">Top up game murah dalam tiga langkah.</h2></div></div>
+      <div class="steps-grid">
+        <article class="step reveal"><span class="step-number">01</span><img class="d-icon-gif" src="./video.gif" alt="Ikon Daulay Storee" /><h3>Pilih Game</h3><p>Pilih game favorit dan nominal top up yang Anda perlukan.</p></article>
+        <article class="step reveal"><span class="step-number">02</span><i class="fa-solid fa-id-card" aria-hidden="true"></i><h3>Masukkan ID</h3><p>Isi User ID dan Server atau Zone ID dengan tepat bila diperlukan.</p></article>
+        <article class="step reveal"><span class="step-number">03</span><i class="fa-solid fa-circle-check" aria-hidden="true"></i><h3>Cek Akun</h3><p>Pastikan nama akun tujuan telah sesuai sebelum melanjutkan pesanan.</p></article>
+      </div>
+    </section>
   </main>
 
-  <footer><div class="container footer-grid"><div><a class="brand" href="#beranda"><span class="brand-mark">D</span>Daulay <span>Storee</span></a><p>Top up game mudah untuk pemain Indonesia.</p></div><div class="footer-links"><a href="#game">Katalog</a><a href="#cara">Cara Top Up</a><a href="#bantuan">Bantuan</a></div></div></footer>
+  <footer>
+    <a href="#" class="brand" aria-label="Daulay Storee beranda">
+      <img class="brand-logo-animation" src="./iniaja.gif" alt="Daulay Storee" />
+    </a>
+    <p>© <span id="year"></span> Daulay Storee. Top up game murah, cepat, dan aman.</p>
+  </footer>
 
-  <div class="modal" id="modal" aria-hidden="true"><div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-    <div class="modal-top"><h3 id="modalTitle">Form Top Up</h3><button class="close" id="closeModal" aria-label="Tutup">×</button></div>
-    <form class="modal-body" id="topupForm"><div class="selected-game" id="selectedGame">Mobile Legends</div>
-      <div class="form-grid"><div class="field"><label for="userId">User ID</label><input id="userId" required placeholder="Contoh: 12345678" /></div><div class="field"><label for="server">Server / Zone</label><input id="server" placeholder="Contoh: 1234" /></div><div class="field full"><label for="nominal">Pilih nominal</label><select id="nominal" required><option value="">Pilih nominal</option><option>86 Diamond</option><option>172 Diamond</option><option>257 Diamond</option><option>514 Diamond</option><option>1.000 Diamond</option></select></div><div class="field full"><label for="payment">Metode pembayaran</label><select id="payment" required><option value="">Pilih metode pembayaran</option><option>QRIS</option><option>DANA</option><option>OVO</option><option>GoPay</option><option>Transfer Bank</option></select></div></div>
-      <button class="checkout" type="submit">Lanjutkan Pembayaran</button><div class="notice" id="notice">Demo berhasil: pesanan Anda telah dibuat. Hubungkan tombol ini ke API pembayaran atau UniPlay pada proyek asli.</div>
-    </form>
-  </div></div>
+  <div class="modal-backdrop" id="topupModal" aria-hidden="true">
+    <section class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="modal-close" id="closeModalButton" type="button" aria-label="Tutup modal top up"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
+      <div class="modal-header"><div class="mini-game-cover" id="selectedGameLogo">GM</div><div><span class="section-label">TOP UP GAME</span><h2 id="modalTitle">Pilih Game</h2></div></div>
+      <form id="topupForm">
+        <input type="hidden" id="selectedGame" />
+        <input type="hidden" id="selectedProductCode" />
+        <div class="form-step"><span class="form-step-number">1</span><div><h3>Masukkan data akun</h3><p>Pastikan User ID dan Zone/Server ID sudah benar.</p></div></div>
+        <div class="input-grid">
+          <label>User ID<input id="userId" type="text" inputmode="text" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="Contoh: 123456789 atau nama_akun" required /></label>
+          <label id="zoneGroup">Zone / Server ID<input id="zoneId" type="text" inputmode="text" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="Contoh: 1234 / kosongkan jika tidak ada" /></label>
+        </div>
+        <button type="button" class="check-id-button" id="checkIdButton"><i class="fa-solid fa-circle-check" aria-hidden="true"></i><span>Cek ID Akun</span></button>
+        <div class="account-result" id="accountResult" role="status" aria-live="polite" hidden></div>
+        <div class="form-step second-step"><span class="form-step-number">2</span><div><h3>Pilih nominal</h3><p>Nominal dimuat dari katalog UniPlay.</p></div></div>
+        <div class="nominal-grid" id="nominalGrid"><p class="game-loading">Memuat nominal...</p></div>
+        <div class="form-step second-step"><span class="form-step-number">3</span><div><h3>Kontak pembeli</h3><p>Opsional, untuk notifikasi dan bukti transaksi.</p></div></div>
+        <div class="input-grid">
+          <label>Email<input id="email" type="email" placeholder="nama@email.com" /></label>
+          <label>Nomor WhatsApp<input id="phone" type="tel" placeholder="08xxxxxxxxxx" /></label>
+        </div>
+        <div class="order-summary">
+          <div><span>Game</span><strong id="summaryGame">-</strong></div>
+          <div><span>Produk</span><strong id="summaryProduct">-</strong></div>
+          <div><span>Total</span><strong id="summaryPrice">-</strong></div>
+        </div>
+        <button type="submit" class="button button-primary order-button" id="orderButton"><span>Lanjutkan Pesanan</span><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></button>
+        <p class="form-note"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i>Data API dan credential transaksi tidak ditampilkan ke browser.</p>
+      </form>
+    </section>
+  </div>
+
+  <div class="modal-backdrop" id="trackModal" aria-hidden="true">
+    <section class="modal track-modal" role="dialog" aria-modal="true" aria-labelledby="trackingTitle">
+      <button class="modal-close" id="closeTrackButton" type="button" aria-label="Tutup modal lacak pesanan"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
+      <div class="modal-header"><div class="mini-game-cover tracking-icon" aria-hidden="true"><i class="fa-solid fa-magnifying-glass"></i></div><div><span class="section-label">LACAK PESANAN</span><h2 id="trackingTitle">Status transaksi Anda</h2></div></div>
+      <form id="trackForm">
+        <label>Nomor Referensi<input id="trackingRef" type="text" placeholder="Contoh: WEB-..." required /></label>
+        <button type="submit" class="button button-primary order-button"><span>Cek Status</span><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i></button>
+        <div class="account-result" id="trackResult" role="status" aria-live="polite" hidden></div>
+      </form>
+    </section>
+  </div>
 
   <script>
-    const modal = document.getElementById('modal');
-    const selectedGame = document.getElementById('selectedGame');
-    const navbar = document.getElementById('navbar');
-    document.getElementById('menuBtn').addEventListener('click', () => navbar.classList.toggle('open'));
-    document.querySelectorAll('[data-open]').forEach(button => button.addEventListener('click', () => {
-      selectedGame.textContent = button.dataset.open;
-      modal.classList.add('open'); modal.setAttribute('aria-hidden', 'false');
-      document.getElementById('notice').style.display = 'none';
-      navbar.classList.remove('open');
-    }));
-    function closeModal(){ modal.classList.remove('open'); modal.setAttribute('aria-hidden','true'); }
-    document.getElementById('closeModal').addEventListener('click', closeModal);
-    modal.addEventListener('click', e => { if(e.target === modal) closeModal(); });
-    document.addEventListener('keydown', e => { if(e.key === 'Escape') closeModal(); });
-    document.getElementById('filters').addEventListener('click', e => {
-      if(!e.target.matches('.filter')) return;
-      document.querySelectorAll('.filter').forEach(x => x.classList.remove('active')); e.target.classList.add('active');
-      const category = e.target.dataset.filter;
-      document.querySelectorAll('.game-card').forEach(card => card.style.display = category === 'all' || card.dataset.category === category ? '' : 'none');
+    const API_BASE = "https://novatopup-api.atursaja888999.workers.dev";
+    const gameGrid = document.getElementById("gameGrid");
+    const gameSearch = document.getElementById("gameSearch");
+    const emptySearch = document.getElementById("emptySearch");
+    const topupModal = document.getElementById("topupModal");
+    const trackModal = document.getElementById("trackModal");
+    const accountResult = document.getElementById("accountResult");
+    const checkIdButton = document.getElementById("checkIdButton");
+    let allGames = [];
+
+    function escapeHtml(value = "") {
+      return String(value).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/\"/g, "&quot;").replace(/'/g, "&#039;");
+    }
+
+    function formatRupiah(value) {
+      return new Intl.NumberFormat("id-ID", { style: "currency", currency: "IDR", minimumFractionDigits: 0 }).format(Number(value || 0));
+    }
+
+    function initials(name = "") {
+      return name.split(/\s+/).filter(Boolean).slice(0, 2).map((word) => word.charAt(0)).join("").toUpperCase() || "GM";
+    }
+
+    function openModal(modal) {
+      modal.classList.add("active");
+      modal.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeModal(modal) {
+      modal.classList.remove("active");
+      modal.setAttribute("aria-hidden", "true");
+      if (!document.querySelector(".modal-backdrop.active")) document.body.style.overflow = "";
+    }
+
+    function renderGames(games) {
+      if (!games.length) {
+        gameGrid.innerHTML = "";
+        emptySearch.hidden = false;
+        emptySearch.textContent = "Game tidak ditemukan. Coba kata kunci lain.";
+        return;
+      }
+      emptySearch.hidden = true;
+      gameGrid.innerHTML = games.map((game, index) => {
+        const denom = game.denom && game.denom[0];
+        const priceText = denom ? `${denom.package} mulai ${formatRupiah(denom.price)}` : "Nominal belum tersedia";
+        const visual = game.image ? `<img src="${escapeHtml(game.image)}" alt="" loading="lazy" />` : `<span>${escapeHtml(initials(game.name))}</span>`;
+        return `<button class="game-card ${index === 0 ? "featured" : ""} reveal" type="button" data-game-id="${escapeHtml(game.id)}"><div class="game-cover api-game-cover">${visual}<div class="cover-glow"></div></div><div class="game-info"><span class="game-category">${escapeHtml(game.publisher || "GAME")}</span><h3>${escapeHtml(game.name)}</h3><p>${escapeHtml(priceText)}</p></div><span class="arrow-circle" aria-hidden="true"><i class="fa-solid fa-arrow-right"></i></span></button>`;
+      }).join("");
+      gameGrid.querySelectorAll(".game-card").forEach((card) => card.addEventListener("click", () => {
+        const game = allGames.find((item) => item.id === card.dataset.gameId);
+        if (game) selectGame(game);
+      }));
+    }
+
+    function selectGame(game) {
+      document.getElementById("selectedGame").value = game.id;
+      document.getElementById("selectedProductCode").value = "";
+      document.getElementById("modalTitle").textContent = game.name;
+      document.getElementById("selectedGameLogo").textContent = initials(game.name);
+      document.getElementById("summaryGame").textContent = game.name;
+      document.getElementById("summaryProduct").textContent = "-";
+      document.getElementById("summaryPrice").textContent = "-";
+      document.getElementById("userId").value = "";
+      document.getElementById("zoneId").value = "";
+      accountResult.hidden = true;
+      accountResult.textContent = "";
+      delete accountResult.dataset.inquiryId;
+
+      const zoneGroup = document.getElementById("zoneGroup");
+      const zoneId = document.getElementById("zoneId");
+      const likelyNeedsZone = /mobile legends|mlbb|genshin/i.test(game.name);
+      zoneGroup.hidden = !likelyNeedsZone;
+      zoneId.required = likelyNeedsZone;
+
+      const nominalGrid = document.getElementById("nominalGrid");
+      const denoms = Array.isArray(game.denom) ? game.denom : [];
+      nominalGrid.innerHTML = denoms.length ? denoms.map((denom, index) => `<button type="button" class="nominal-card ${index === 0 ? "active" : ""}" data-denom-id="${escapeHtml(denom.id)}"><strong>${escapeHtml(denom.package)}</strong><span>${formatRupiah(denom.price)}</span></button>`).join("") : '<p class="game-loading">Nominal belum tersedia untuk game ini.</p>';
+      if (denoms.length) selectDenom(denoms[0]);
+      nominalGrid.querySelectorAll(".nominal-card").forEach((card) => card.addEventListener("click", () => {
+        const denom = denoms.find((item) => item.id === card.dataset.denomId);
+        if (denom) selectDenom(denom);
+      }));
+      openModal(topupModal);
+    }
+
+    function selectDenom(denom) {
+      document.getElementById("selectedProductCode").value = denom.id;
+      document.getElementById("summaryProduct").textContent = denom.package;
+      document.getElementById("summaryPrice").textContent = formatRupiah(denom.price);
+      document.querySelectorAll(".nominal-card").forEach((card) => card.classList.toggle("active", card.dataset.denomId === denom.id));
+      accountResult.hidden = true;
+      delete accountResult.dataset.inquiryId;
+    }
+
+    async function loadGames() {
+      try {
+        const response = await fetch(`${API_BASE}/api/dtu`);
+        const data = await response.json();
+        if (!response.ok || String(data.status) !== "200") throw new Error(data.message || "Katalog UniPlay tidak dapat dimuat.");
+        allGames = Array.isArray(data.list_dtu) ? data.list_dtu : [];
+        renderGames(allGames);
+      } catch (error) {
+        gameGrid.innerHTML = "";
+        emptySearch.hidden = false;
+        emptySearch.textContent = "Katalog game sedang tidak dapat dimuat. Silakan muat ulang halaman.";
+        console.error(error);
+      }
+    }
+
+    gameSearch.addEventListener("input", (event) => {
+      const keyword = event.target.value.trim().toLowerCase();
+      renderGames(allGames.filter((game) => `${game.name || ""} ${game.publisher || ""} ${(game.denom || []).map((denom) => denom.package).join(" ")}`.toLowerCase().includes(keyword)));
     });
-    document.getElementById('topupForm').addEventListener('submit', e => {
-      e.preventDefault(); document.getElementById('notice').style.display = 'block';
+
+    checkIdButton.addEventListener("click", async () => {
+      const entitasId = document.getElementById("selectedGame").value;
+      const denomId = document.getElementById("selectedProductCode").value;
+      const userId = document.getElementById("userId").value.trim();
+      const serverId = document.getElementById("zoneId").value.trim();
+      if (!entitasId || !denomId || !userId) {
+        accountResult.hidden = false;
+        accountResult.textContent = "Pilih nominal dan masukkan User ID terlebih dahulu.";
+        return;
+      }
+      const body = { entitas_id: entitasId, denom_id: denomId, user_id: userId };
+      if (serverId) body.server_id = serverId;
+      checkIdButton.disabled = true;
+      checkIdButton.innerHTML = '<i class="fa-solid fa-spinner fa-spin" aria-hidden="true"></i><span>Mengecek ID...</span>';
+      accountResult.hidden = false;
+      accountResult.textContent = "Menghubungkan ke UniPlay...";
+      try {
+        const response = await fetch(`${API_BASE}/api/inquiry`, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) });
+        const data = await response.json();
+        if (!response.ok || String(data.status) !== "200") throw new Error(data.message || "ID game tidak dapat diverifikasi.");
+        const username = data.inquiry_info && data.inquiry_info.username ? data.inquiry_info.username : "Akun terverifikasi";
+        accountResult.innerHTML = `<i class="fa-solid fa-circle-check" aria-hidden="true"></i> Akun ditemukan: <strong>${escapeHtml(username)}</strong>`;
+        accountResult.dataset.inquiryId = data.inquiry_id || "";
+      } catch (error) {
+        accountResult.innerHTML = `<i class="fa-solid fa-circle-exclamation" aria-hidden="true"></i> ${escapeHtml(error.message)}`;
+        delete accountResult.dataset.inquiryId;
+      } finally {
+        checkIdButton.disabled = false;
+        checkIdButton.innerHTML = '<i class="fa-solid fa-circle-check" aria-hidden="true"></i><span>Cek ID Akun</span>';
+      }
     });
+
+    document.getElementById("topupForm").addEventListener("submit", (event) => {
+      event.preventDefault();
+      if (!accountResult.dataset.inquiryId) {
+        accountResult.hidden = false;
+        accountResult.textContent = "Silakan cek dan pastikan ID akun terlebih dahulu.";
+        return;
+      }
+      alert("Akun telah tervalidasi. Pembayaran otomatis belum diaktifkan, sehingga pesanan belum dikirim atau dibayar.");
+    });
+
+    document.getElementById("openTrackButton").addEventListener("click", () => openModal(trackModal));
+    document.getElementById("heroTrackButton").addEventListener("click", () => openModal(trackModal));
+    document.getElementById("closeModalButton").addEventListener("click", () => closeModal(topupModal));
+    document.getElementById("closeTrackButton").addEventListener("click", () => closeModal(trackModal));
+    [topupModal, trackModal].forEach((modal) => modal.addEventListener("click", (event) => { if (event.target === modal) closeModal(modal); }));
+    document.addEventListener("keydown", (event) => { if (event.key === "Escape") { closeModal(topupModal); closeModal(trackModal); } });
+    document.getElementById("trackForm").addEventListener("submit", (event) => {
+      event.preventDefault();
+      const result = document.getElementById("trackResult");
+      result.hidden = false;
+      result.textContent = "Pelacakan pesanan belum tersedia karena pembayaran otomatis belum diaktifkan.";
+    });
+
+    const bannerSlider = document.getElementById("bannerSlider");
+    if (bannerSlider) {
+      const bannerTrack = bannerSlider.querySelector(".banner-track");
+      const bannerSlides = Array.from(bannerSlider.querySelectorAll(".banner-slide"));
+      const bannerDots = Array.from(bannerSlider.querySelectorAll(".banner-dot"));
+      const bannerPrevious = bannerSlider.querySelector(".banner-prev");
+      const bannerNext = bannerSlider.querySelector(".banner-next");
+      let currentBanner = 0;
+      let bannerTimer;
+
+      function showBanner(index) {
+        currentBanner = (index + bannerSlides.length) % bannerSlides.length;
+        bannerTrack.style.transform = `translateX(-${currentBanner * 100}%)`;
+        bannerSlides.forEach((slide, slideIndex) => slide.classList.toggle("is-active", slideIndex === currentBanner));
+        bannerDots.forEach((dot, dotIndex) => {
+          const active = dotIndex === currentBanner;
+          dot.classList.toggle("is-active", active);
+          dot.setAttribute("aria-current", active ? "true" : "false");
+        });
+      }
+
+      function startBannerTimer() {
+        window.clearInterval(bannerTimer);
+        bannerTimer = window.setInterval(() => showBanner(currentBanner + 1), 8000);
+      }
+
+      bannerPrevious.addEventListener("click", () => {
+        showBanner(currentBanner - 1);
+        startBannerTimer();
+      });
+
+      bannerNext.addEventListener("click", () => {
+        showBanner(currentBanner + 1);
+        startBannerTimer();
+      });
+
+      bannerDots.forEach((dot, index) => dot.addEventListener("click", () => {
+        showBanner(index);
+        startBannerTimer();
+      }));
+
+      bannerSlider.addEventListener("mouseenter", () => window.clearInterval(bannerTimer));
+      bannerSlider.addEventListener("mouseleave", startBannerTimer);
+      bannerSlider.addEventListener("focusin", () => window.clearInterval(bannerTimer));
+      bannerSlider.addEventListener("focusout", startBannerTimer);
+      startBannerTimer();
+    }
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+    loadGames();
   </script>
 </body>
 </html>
