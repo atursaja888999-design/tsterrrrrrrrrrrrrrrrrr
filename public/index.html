@@ -250,8 +250,8 @@
         <input type="hidden" id="selectedProductCode" />
         <div class="form-step"><span class="form-step-number">1</span><div><h3>Masukkan data akun</h3><p>Pastikan User ID dan Zone/Server ID sudah benar.</p></div></div>
         <div class="input-grid">
-          <label>User ID<input id="userId" type="text" inputmode="numeric" placeholder="Contoh: 123456789" required /></label>
-          <label id="zoneGroup">Zone / Server ID<input id="zoneId" type="text" inputmode="numeric" placeholder="Contoh: 1234" /></label>
+<label>User ID<input id="userId" type="text" inputmode="text" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="Contoh: 123456789 atau nama_akun" required /></label>
+<label id="zoneGroup">Zone / Server ID<input id="zoneId" type="text" inputmode="text" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="Contoh: 1234" /></label>
         </div>
         <button type="button" class="check-id-button" id="checkIdButton"><i class="fa-solid fa-circle-check" aria-hidden="true"></i><span>Cek ID Akun</span></button>
         <div class="account-result" id="accountResult" role="status" aria-live="polite" hidden></div>
