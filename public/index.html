@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
-  <link rel="stylesheet" href="/tsterrrrrrrrrrrrrrrrrr/public/style.css?v=20260925" />
+  <link rel="stylesheet" href="/style.css?v=20260925" />
 
   <style>
     .api-game-cover { overflow: hidden; background: linear-gradient(135deg, #4d1c8f, #171027); }
@@ -100,11 +100,7 @@
   <div class="modal-backdrop" id="topupModal" aria-hidden="true">
     <section class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
       <button class="modal-close" id="closeModalButton" type="button" aria-label="Tutup modal top up"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
-      <div class="modal-header">
-        <div class="mini-game-cover" id="selectedGameLogo">GM</div>
-        <div><span class="section-label">TOP UP GAME</span><h2 id="modalTitle">Pilih Game</h2></div>
-      </div>
-
+      <div class="modal-header"><div class="mini-game-cover" id="selectedGameLogo">GM</div><div><span class="section-label">TOP UP GAME</span><h2 id="modalTitle">Pilih Game</h2></div></div>
       <form id="topupForm">
         <input type="hidden" id="selectedGame" />
         <input type="hidden" id="selectedProductCode" />
@@ -115,16 +111,13 @@
         </div>
         <button type="button" class="check-id-button" id="checkIdButton"><i class="fa-solid fa-circle-check" aria-hidden="true"></i><span>Cek ID Akun</span></button>
         <div class="account-result" id="accountResult" role="status" aria-live="polite" hidden></div>
-
         <div class="form-step second-step"><span class="form-step-number">2</span><div><h3>Pilih nominal</h3><p>Nominal dimuat dari katalog UniPlay.</p></div></div>
         <div class="nominal-grid" id="nominalGrid"><p class="game-loading">Memuat nominal...</p></div>
-
         <div class="form-step second-step"><span class="form-step-number">3</span><div><h3>Kontak pembeli</h3><p>Opsional, untuk notifikasi dan bukti transaksi.</p></div></div>
         <div class="input-grid">
           <label>Email<input id="email" type="email" placeholder="nama@email.com" /></label>
           <label>Nomor WhatsApp<input id="phone" type="tel" placeholder="08xxxxxxxxxx" /></label>
         </div>
-
         <div class="order-summary">
           <div><span>Game</span><strong id="summaryGame">-</strong></div>
           <div><span>Produk</span><strong id="summaryProduct">-</strong></div>
@@ -139,10 +132,7 @@
   <div class="modal-backdrop" id="trackModal" aria-hidden="true">
     <section class="modal track-modal" role="dialog" aria-modal="true" aria-labelledby="trackingTitle">
       <button class="modal-close" id="closeTrackButton" type="button" aria-label="Tutup modal lacak pesanan"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
-      <div class="modal-header">
-        <div class="mini-game-cover tracking-icon" aria-hidden="true"><i class="fa-solid fa-magnifying-glass"></i></div>
-        <div><span class="section-label">LACAK PESANAN</span><h2 id="trackingTitle">Status transaksi Anda</h2></div>
-      </div>
+      <div class="modal-header"><div class="mini-game-cover tracking-icon" aria-hidden="true"><i class="fa-solid fa-magnifying-glass"></i></div><div><span class="section-label">LACAK PESANAN</span><h2 id="trackingTitle">Status transaksi Anda</h2></div></div>
       <form id="trackForm">
         <label>Nomor Referensi<input id="trackingRef" type="text" placeholder="Contoh: WEB-..." required /></label>
         <button type="submit" class="button button-primary order-button"><span>Cek Status</span><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i></button>
@@ -161,7 +151,6 @@
     const accountResult = document.getElementById("accountResult");
     const checkIdButton = document.getElementById("checkIdButton");
     let allGames = [];
-    let selectedGameData = null;
 
     function escapeHtml(value = "") {
       return String(value).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/\"/g, "&quot;").replace(/'/g, "&#039;");
@@ -208,7 +197,6 @@
     }
 
     function selectGame(game) {
-      selectedGameData = game;
       document.getElementById("selectedGame").value = game.id;
       document.getElementById("selectedProductCode").value = "";
       document.getElementById("modalTitle").textContent = game.name;
