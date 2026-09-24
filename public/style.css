@@ -34,9 +34,9 @@ a { color: inherit; text-decoration: none; }
 .navbar, .hero, .games-section, .features-section, .steps-section, footer { width: min(1160px, calc(100% - 40px)); margin-inline: auto; }
 .navbar { position: relative; z-index: 5; display: flex; align-items: center; justify-content: space-between; height: 96px; }
 
-/* Logo video besar, tanpa background tambahan. */
-.brand { display: inline-flex; align-items: center; flex: 0 0 auto; width: min(420px, 64vw); max-width: 420px; overflow: visible; }
-.brand-logo-animation { display: block; width: 100%; height: 76px; object-fit: contain; object-position: left center; background: transparent; }
+/* iniaja.gif: logo utama besar dan tanpa background. */
+.brand { display: inline-flex; align-items: center; flex: 0 0 auto; width: min(420px, 64vw); max-width: 420px; overflow: visible; background: transparent; border: 0; box-shadow: none; }
+.brand-logo-animation { display: block; width: 100%; height: 76px; object-fit: contain; object-position: left center; background: transparent; border: 0; box-shadow: none; }
 .navbar .brand { margin-right: 10px; }
 
 .nav-menu { display: flex; gap: 28px; margin-left: 40px; }
@@ -72,7 +72,11 @@ a { color: inherit; text-decoration: none; }
 .hero-grid { position: absolute; inset: 0; opacity: .32; background-image: linear-gradient(rgba(153, 216, 255, .1) 1px, transparent 1px), linear-gradient(90deg, rgba(153, 216, 255, .1) 1px, transparent 1px); background-size: 27px 27px; mask-image: linear-gradient(to bottom, rgba(0,0,0,.85), transparent); }
 .game-orb { position: relative; z-index: 3; display: grid; width: 205px; height: 205px; place-items: center; }
 .orb-core { position: relative; z-index: 2; display: grid; width: 112px; height: 112px; place-items: center; border: 1px solid rgba(204, 240, 255, .66); border-radius: 50%; background: radial-gradient(circle at 30% 25%, rgba(255,255,255,.45), transparent 18%), linear-gradient(135deg, #0754b8, #1799eb); box-shadow: 0 0 0 12px rgba(62, 159, 255, .06), 0 0 60px rgba(27, 150, 255, .52); animation: float 4s ease-in-out infinite; }
-.orb-core i { font-size: 44px; text-shadow: 0 6px 18px rgba(0,0,0,.36); }
+
+/* video.gif: pengganti ikon fa-solid fa-gamepad. */
+.d-icon-gif { display: block; width: 68px; height: 68px; max-width: 100%; max-height: 100%; object-fit: contain; object-position: center; background: transparent; border: 0; border-radius: 0; box-shadow: none; }
+.orb-core .d-icon-gif { width: 68px; height: 68px; }
+
 .orb-ring { position: absolute; border: 1px solid rgba(162, 221, 255, .4); border-radius: 50%; }
 .ring-one { width: 170px; height: 170px; border-style: dashed; animation: rotate 13s linear infinite; }
 .ring-two { width: 220px; height: 220px; border-color: rgba(31, 181, 255, .28); animation: rotate-reverse 18s linear infinite; }
@@ -136,6 +140,7 @@ a { color: inherit; text-decoration: none; }
 .step:not(:last-child) { border-right: 1px solid var(--line); }
 .step-number { position: absolute; top: 23px; right: 26px; color: rgba(148, 214, 255, .16); font-family: "Space Grotesk", sans-serif; font-size: 32px; font-weight: 700; }
 .step > i { color: var(--blue-light); font-size: 25px; }
+.step .d-icon-gif { width: 42px; height: 42px; margin-bottom: 2px; }
 .step h3 { margin: 20px 0 7px; font-size: 18px; }
 .step p { max-width: 240px; margin: 0; color: var(--muted); font-size: 14px; line-height: 1.55; }
 footer { display: flex; align-items: center; justify-content: space-between; min-height: 104px; border-top: 1px solid var(--line); }
@@ -226,6 +231,7 @@ input:focus { border-color: rgba(88, 187, 255, .75); box-shadow: 0 0 0 3px rgba(
   .feature-card { padding: 19px; }
   .step:not(:last-child) { border-right: 0; border-bottom: 1px solid var(--line); }
   .step { min-height: 175px; }
+  .step .d-icon-gif { width: 38px; height: 38px; }
   footer { align-items: flex-start; flex-direction: column; justify-content: center; gap: 9px; padding: 17px 0; }
   footer .brand { width: min(250px, 70vw); max-width: 250px; }
   footer .brand-logo-animation { height: 50px; }
