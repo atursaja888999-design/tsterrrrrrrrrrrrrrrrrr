@@ -280,6 +280,20 @@
           <div><span>Total</span><strong id="summaryPrice">-</strong></div>
         </div>
         <button type="submit" class="button button-primary order-button" id="orderButton"><span>Lanjutkan Pesanan</span><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></button>
+
+        <div class="payment-step" id="paymentStep" hidden>
+          <div class="form-step second-step"><span class="form-step-number">4</span><div><h3>Bayar dengan QRIS</h3><p>Scan kode di bawah pakai aplikasi e-wallet atau m-banking, lalu konfirmasi setelah transfer berhasil.</p></div></div>
+          <div class="qris-box">
+            <img src="./qris.jpg" alt="Kode QRIS Daulay Storee" class="qris-image" />
+            <div class="qris-info">
+              <div><span>Nomor Referensi</span><strong id="paymentRef">-</strong></div>
+              <div><span>Total Bayar</span><strong id="paymentAmount">-</strong></div>
+            </div>
+          </div>
+          <button type="button" class="button button-primary order-button" id="confirmPaidButton"><i class="fa-solid fa-paper-plane" aria-hidden="true"></i><span>Saya Sudah Transfer</span></button>
+          <div class="account-result" id="notifyStatus" role="status" aria-live="polite" hidden></div>
+        </div>
+
         <p class="form-note"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i>Data API dan credential transaksi tidak ditampilkan ke browser.</p>
       </form>
     </section>
@@ -366,6 +380,7 @@
       accountResult.hidden = true;
       accountResult.textContent = "";
       delete accountResult.dataset.inquiryId;
+      resetPaymentStep();
 
       const zoneGroup = document.getElementById("zoneGroup");
       const zoneId = document.getElementById("zoneId");
@@ -445,6 +460,22 @@
       }
     });
 
+    let currentOrder = null;
+    const paymentStep = document.getElementById("paymentStep");
+    const orderButton = document.getElementById("orderButton");
+    const notifyStatus = document.getElementById("notifyStatus");
+    const confirmPaidButton = document.getElementById("confirmPaidButton");
+
+    function resetPaymentStep() {
+      currentOrder = null;
+      paymentStep.hidden = true;
+      orderButton.hidden = false;
+      notifyStatus.hidden = true;
+      notifyStatus.textContent = "";
+      confirmPaidButton.disabled = false;
+      confirmPaidButton.innerHTML = '<i class="fa-solid fa-paper-plane" aria-hidden="true"></i><span>Saya Sudah Transfer</span>';
+    }
+
     document.getElementById("topupForm").addEventListener("submit", (event) => {
       event.preventDefault();
       if (!accountResult.dataset.inquiryId) {
@@ -452,12 +483,58 @@
         accountResult.textContent = "Silakan cek dan pastikan ID akun terlebih dahulu.";
         return;
       }
-      alert("Akun telah tervalidasi. Pembayaran otomatis belum diaktifkan, sehingga pesanan belum dikirim atau dibayar.");
+      if (!document.getElementById("selectedProductCode").value) {
+        alert("Pilih nominal top up terlebih dahulu.");
+        return;
+      }
+
+      currentOrder = {
+        ref: "WEB-" + Date.now().toString(36).toUpperCase() + "-" + Math.random().toString(36).slice(2, 6).toUpperCase(),
+        game: document.getElementById("selectedGame").value,
+        gameName: document.getElementById("summaryGame").textContent,
+        product: document.getElementById("summaryProduct").textContent,
+        productCode: document.getElementById("selectedProductCode").value,
+        price: document.getElementById("summaryPrice").textContent,
+        userId: document.getElementById("userId").value.trim(),
+        zoneId: document.getElementById("zoneId").value.trim(),
+        email: document.getElementById("email").value.trim(),
+        phone: document.getElementById("phone").value.trim(),
+        inquiryId: accountResult.dataset.inquiryId
+      };
+
+      document.getElementById("paymentRef").textContent = currentOrder.ref;
+      document.getElementById("paymentAmount").textContent = currentOrder.price;
+      paymentStep.hidden = false;
+      orderButton.hidden = true;
+      paymentStep.scrollIntoView({ behavior: "smooth", block: "center" });
+    });
+
+    confirmPaidButton.addEventListener("click", async () => {
+      if (!currentOrder) return;
+      confirmPaidButton.disabled = true;
+      confirmPaidButton.innerHTML = '<i class="fa-solid fa-spinner fa-spin" aria-hidden="true"></i><span>Mengirim konfirmasi...</span>';
+      notifyStatus.hidden = false;
+      notifyStatus.textContent = "Mengirim konfirmasi ke admin...";
+      try {
+        const response = await fetch(`${API_BASE}/api/notify`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(currentOrder)
+        });
+        const data = await response.json().catch(() => ({}));
+        if (!response.ok || (data.status && String(data.status) !== "200")) throw new Error(data.message || "Gagal mengirim konfirmasi ke admin.");
+        notifyStatus.innerHTML = '<i class="fa-solid fa-circle-check" aria-hidden="true"></i> Konfirmasi terkirim. Admin akan memproses pesanan setelah pembayaran diverifikasi.';
+        confirmPaidButton.innerHTML = '<i class="fa-solid fa-circle-check" aria-hidden="true"></i><span>Konfirmasi Terkirim</span>';
+      } catch (error) {
+        notifyStatus.innerHTML = `<i class="fa-solid fa-circle-exclamation" aria-hidden="true"></i> ${escapeHtml(error.message)}`;
+        confirmPaidButton.disabled = false;
+        confirmPaidButton.innerHTML = '<i class="fa-solid fa-paper-plane" aria-hidden="true"></i><span>Saya Sudah Transfer</span>';
+      }
     });
 
     document.getElementById("openTrackButton").addEventListener("click", () => openModal(trackModal));
     document.getElementById("heroTrackButton").addEventListener("click", () => openModal(trackModal));
-    document.getElementById("closeModalButton").addEventListener("click", () => closeModal(topupModal));
+    document.getElementById("closeModalButton").addEventListener("click", () => { closeModal(topupModal); resetPaymentStep(); });
     document.getElementById("closeTrackButton").addEventListener("click", () => closeModal(trackModal));
     [topupModal, trackModal].forEach((modal) => modal.addEventListener("click", (event) => { if (event.target === modal) closeModal(modal); }));
     document.addEventListener("keydown", (event) => { if (event.key === "Escape") { closeModal(topupModal); closeModal(trackModal); } });
