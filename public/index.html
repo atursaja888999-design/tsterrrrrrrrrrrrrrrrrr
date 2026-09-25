@@ -350,6 +350,7 @@
         const game = allGames.find((item) => item.id === card.dataset.gameId);
         if (game) selectGame(game);
       }));
+      initRevealObserver();
     }
 
     function selectGame(game) {
@@ -515,7 +516,26 @@
       startBannerTimer();
     }
 
+    function initRevealObserver() {
+      const targets = document.querySelectorAll(".reveal:not(.visible)");
+      if (!targets.length) return;
+      if (!("IntersectionObserver" in window)) {
+        targets.forEach((el) => el.classList.add("visible"));
+        return;
+      }
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            io.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.15 });
+      targets.forEach((el) => io.observe(el));
+    }
+
     document.getElementById("year").textContent = new Date().getFullYear();
+    initRevealObserver();
     loadGames();
   </script>
 </body>
