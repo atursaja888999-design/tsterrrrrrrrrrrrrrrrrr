@@ -286,6 +286,14 @@ input:focus { border-color: rgba(53, 200, 255, .8); box-shadow: 0 0 0 3px rgba(5
 .order-button { width: 100%; }
 .form-note { margin: 12px 0 0; color: #7492a8; text-align: center; font-size: 11px; }
 .form-note i { margin-right: 4px; color: #6fd0ff; }
+.payment-step { margin-top: 8px; }
+.qris-box { display: flex; align-items: center; gap: 18px; padding: 16px; border: 1px solid rgba(53, 200, 255, .3); border-radius: 16px; background: linear-gradient(135deg, rgba(11, 95, 255, .12), rgba(53, 231, 255, .05)); }
+.qris-image { width: 140px; height: 140px; flex: 0 0 140px; border-radius: 12px; object-fit: contain; background: #fff; padding: 8px; box-shadow: 0 0 24px rgba(53, 200, 255, .25); }
+.qris-info { display: grid; gap: 10px; min-width: 0; }
+.qris-info div { display: grid; gap: 2px; }
+.qris-info span { color: #86a3ba; font-size: 11px; }
+.qris-info strong { font-family: "Space Grotesk", sans-serif; font-size: 15px; color: #eaf6ff; overflow-wrap: anywhere; }
+#confirmPaidButton { width: 100%; margin-top: 14px; }
 .track-modal { width: min(500px,100%); }
 .track-modal form { display: grid; gap: 16px; }
 .tracking-result pre { overflow-x: auto; margin: 9px 0 0; color: inherit; font-family: "Space Grotesk", sans-serif; font-size: 11px; white-space: pre-wrap; }
