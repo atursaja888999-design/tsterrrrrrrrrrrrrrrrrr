@@ -31,6 +31,7 @@
 
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
   <link rel="stylesheet" href="./style.css?v=daulaystoree-20260925-banner" />
 
   <style>
@@ -273,6 +274,7 @@
       <form id="topupForm">
         <input type="hidden" id="selectedGame" />
         <input type="hidden" id="selectedProductCode" />
+        <input type="hidden" id="selectedPriceRaw" />
         <div class="form-step"><span class="form-step-number">1</span><div><h3>Masukkan data akun</h3><p>Pastikan User ID dan Zone/Server ID sudah benar.</p></div></div>
         <div class="input-grid">
           <label>User ID<input id="userId" type="text" inputmode="text" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="Contoh: 123456789 atau nama_akun" required /></label>
@@ -297,7 +299,7 @@
         <div class="payment-step" id="paymentStep" hidden>
           <div class="form-step second-step"><span class="form-step-number">4</span><div><h3>Bayar dengan QRIS</h3><p>Scan kode di bawah pakai aplikasi e-wallet atau m-banking, lalu konfirmasi setelah transfer berhasil.</p></div></div>
           <div class="qris-box">
-            <img src="./qris.jpg" alt="Kode QRIS Daulay Storee" class="qris-image" />
+            <div id="qrisContainer" class="qris-image"></div>
             <div class="qris-info">
               <div><span>Nomor Referensi</span><strong id="paymentRef">-</strong></div>
               <div><span>Total Bayar</span><strong id="paymentAmount">-</strong></div>
@@ -414,6 +416,7 @@
 
     function selectDenom(denom) {
       document.getElementById("selectedProductCode").value = denom.id;
+      document.getElementById("selectedPriceRaw").value = denom.price;
       document.getElementById("summaryProduct").textContent = denom.package;
       document.getElementById("summaryPrice").textContent = formatRupiah(denom.price);
       document.querySelectorAll(".nominal-card").forEach((card) => card.classList.toggle("active", card.dataset.denomId === denom.id));
@@ -473,6 +476,71 @@
       }
     });
 
+    // --- QRIS otomatis mengikuti nominal (punya AL CLOTH via DANA) ---
+    // Ganti QRIS_STATIC_PAYLOAD ini kalau suatu saat kamu ganti QRIS ke rekening/merchant lain.
+    const QRIS_STATIC_PAYLOAD = "00020101021126570011ID.DANA.WWW011893600915391631823602099163182360303UMI51440014ID.CO.QRIS.WWW0215ID10254066753850303UMI5204561153033605802ID5908AL CLOTH6015Kota Tangerang 6105154116304F696";
+
+    function crc16Ccitt(str) {
+      let crc = 0xFFFF;
+      for (let i = 0; i < str.length; i++) {
+        crc ^= (str.charCodeAt(i) << 8);
+        for (let b = 0; b < 8; b++) {
+          crc = (crc & 0x8000) ? ((crc << 1) ^ 0x1021) & 0xFFFF : (crc << 1) & 0xFFFF;
+        }
+      }
+      return crc.toString(16).toUpperCase().padStart(4, "0");
+    }
+
+    function parseTlv(payload) {
+      const tags = [];
+      let i = 0;
+      while (i < payload.length - 4) {
+        const tag = payload.substr(i, 2);
+        const len = parseInt(payload.substr(i + 2, 2), 10);
+        const value = payload.substr(i + 4, len);
+        tags.push([tag, value]);
+        i += 4 + len;
+        if (tag === "63") break;
+      }
+      return tags;
+    }
+
+    function buildDynamicQris(staticPayload, amount) {
+      const tags = parseTlv(staticPayload);
+      const result = [];
+      let inserted = false;
+      for (const [tag, value] of tags) {
+        if (tag === "01") {
+          result.push(["01", "12"]); // tandai QR sebagai dinamis (sudah ada nominal)
+        } else if (tag === "54") {
+          continue; // buang nominal lama kalau ada, nanti disisipkan ulang
+        } else if (tag === "58" && !inserted) {
+          result.push(["54", String(amount)]);
+          inserted = true;
+          result.push([tag, value]);
+        } else if (tag === "63") {
+          if (!inserted) result.push(["54", String(amount)]);
+          continue; // checksum lama dibuang, dihitung ulang di bawah
+        } else {
+          result.push([tag, value]);
+        }
+      }
+      let body = "";
+      for (const [tag, value] of result) {
+        body += tag + String(value.length).padStart(2, "0") + value;
+      }
+      body += "6304";
+      return body + crc16Ccitt(body);
+    }
+
+    function renderQris(amount) {
+      const container = document.getElementById("qrisContainer");
+      container.innerHTML = "";
+      if (!amount) return;
+      const payload = buildDynamicQris(QRIS_STATIC_PAYLOAD, amount);
+      new QRCode(container, { text: payload, width: 124, height: 124, correctLevel: QRCode.CorrectLevel.M });
+    }
+
     let currentOrder = null;
     const paymentStep = document.getElementById("paymentStep");
     const orderButton = document.getElementById("orderButton");
@@ -483,6 +551,7 @@
       currentOrder = null;
       paymentStep.hidden = true;
       orderButton.hidden = false;
+      document.getElementById("qrisContainer").innerHTML = "";
       notifyStatus.hidden = true;
       notifyStatus.textContent = "";
       confirmPaidButton.disabled = false;
@@ -517,6 +586,7 @@
 
       document.getElementById("paymentRef").textContent = currentOrder.ref;
       document.getElementById("paymentAmount").textContent = currentOrder.price;
+      renderQris(document.getElementById("selectedPriceRaw").value);
       paymentStep.hidden = false;
       orderButton.hidden = true;
       paymentStep.scrollIntoView({ behavior: "smooth", block: "center" });
